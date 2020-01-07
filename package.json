@@ -1,0 +1,11 @@
+{
+  "name": "unikki",
+  "version": "0.1.0",
+  "description": "unikki is diary to be centrally managed",
+  "main": "index.js",
+  "repository": "git@github.com:tkdalic/unikki.git",
+  "author": "tkdalic <himagami126@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
