@@ -1,4 +1,4 @@
-name: anuglar test
+name: angular lint
 
 on: [pull_request]
 
@@ -19,8 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: yarn install
       run: yarn --cwd ./unikki
-    - name: yarn test
+    - name: yarn lint
       run: |
-        yarn --cwd ./unikki test:ci
+        yarn --cwd ./unikki lint
       env:
         CI: true
