@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: yarn lint
       run: |
+        yarn --cwd ./unikki
         yarn --cwd ./unikki lint
-        npm run --prefix unikki lint
       env:
         CI: true
