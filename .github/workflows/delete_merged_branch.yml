@@ -1,7 +1,6 @@
 name: delete merged branch
 
 on: [pull_request]
-types: 
 
 jobs:
   build:
