@@ -8,5 +8,8 @@
   "license": "MIT",
   "dependencies": {
     "@angular/cli": "^8.3.21"
+  },
+  "devDependencies": {
+    "husky": "^4.0.0"
   }
 }
