@@ -9,6 +9,7 @@
     "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
     "prettier": "prettier --write '{e2e,src,test}/**/*.{ts,html,scss,json}' README.md package.json",
+    "prettier:staged": "pretty-quick --staged",
     "e2e": "ng e2e"
   },
   "private": true,
