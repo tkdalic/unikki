@@ -12,4 +12,12 @@ export class TodoListComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  onEnter(index: number) {
+    this.tasks.splice(index + 1, 0, { text: "", check: false });
+  }
+
+  onDelete(index: number) {
+    this.tasks.splice(index, 1);
+  }
 }

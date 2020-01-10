@@ -5,7 +5,7 @@
     class="todo__text"
     [(ngModel)]="text"
     (keyup.enter)="onEnter()"
-    (keyup.delete)="onDelete()"
+    (keyup.backspace)="onDelete()"
     (change)="onChangeText(text)"
   />
 </div>
