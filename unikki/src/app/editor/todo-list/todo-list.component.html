@@ -1,1 +1,1 @@
-<p>todo-list works!</p>
+<app-todo *ngFor="let task of tasks" [check]="task.check" [text]="task.text"></app-todo>
