@@ -21,4 +21,10 @@ describe("MarkdownEditorComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should setText", () => {
+    const testMarkdown = "test";
+    component.markdown = testMarkdown;
+    expect(component.markdown).toBe(testMarkdown);
+  });
 });
