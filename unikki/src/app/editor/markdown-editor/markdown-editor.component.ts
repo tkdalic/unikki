@@ -21,14 +21,14 @@ export class MarkdownEditorComponent implements OnInit {
   @Output() markdownChange = new EventEmitter<string>();
 
   private editor: Editor;
-  private _markdown: string;
+  private markdownText: string;
 
   constructor() {}
 
   ngOnInit() {
     this.editor = new Editor({
       el: this.markdownEditor.nativeElement,
-      initialValue: this._markdown,
+      initialValue: this.markdownText,
       previewStyle: "tab"
     });
     this.editor.addHook("change", () =>
@@ -37,7 +37,7 @@ export class MarkdownEditorComponent implements OnInit {
   }
 
   @Input() set markdown(markdown: string) {
-    this._markdown = markdown;
+    this.markdownText = markdown;
 
     if (this.editor) {
       this.editor.setMarkdown(markdown);
