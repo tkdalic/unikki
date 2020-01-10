@@ -6,5 +6,5 @@ export default {
 
 export const markdownEditor = () => ({
   component: TodoComponent,
-  props: {}
+  props: { text: "test" }
 });
