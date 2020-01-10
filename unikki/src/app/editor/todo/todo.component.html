@@ -1,3 +1,8 @@
 <div class="todo">
-  <input type="text" class="todo__text" [(ngModel)]="text" />
+  <input
+    type="text"
+    class="todo__text"
+    [(ngModel)]="text"
+    (keyup.enter)="onEnter()"
+  />
 </div>
