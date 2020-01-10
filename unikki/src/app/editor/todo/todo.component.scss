@@ -1,5 +1,6 @@
 .todo {
+  display: flex;
   &__text {
-    width: 100%;
+    flex-grow: 1;
   }
 }
