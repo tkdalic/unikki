@@ -8,10 +8,16 @@ import { Task } from "../todo/task";
 })
 export class TodoListComponent implements OnInit {
   @Input() public tasks: Task[] = [];
+  firstTask: Task = { text: "", check: false };
 
   constructor() {}
 
   ngOnInit() {}
+
+  addTask() {
+    this.tasks.unshift({ ...this.firstTask });
+    this.firstTask = { text: "", check: false };
+  }
 
   onEnter(index: number) {
     this.tasks.splice(index + 1, 0, { text: "", check: false });

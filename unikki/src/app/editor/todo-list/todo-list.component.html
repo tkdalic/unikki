@@ -1,4 +1,10 @@
 <app-todo
+  [(check)]="firstTask.check"
+  [(text)]="firstTask.text"
+  (enterChange)="addTask()"
+></app-todo>
+
+<app-todo
   *ngFor="let task of tasks; let i = index"
   [(check)]="task.check"
   [(text)]="task.text"
