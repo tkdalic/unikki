@@ -4,5 +4,6 @@
     class="todo__text"
     [(ngModel)]="text"
     (keyup.enter)="onEnter()"
+    (keyup.delete)="onDelete()"
   />
 </div>

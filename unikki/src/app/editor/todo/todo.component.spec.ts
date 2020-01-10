@@ -30,4 +30,20 @@ describe("TodoComponent", () => {
     fixture.detectChanges();
     expect(component.enterChange.emit).toHaveBeenCalled();
   });
+
+  it("should not emit delete", () => {
+    spyOn(component.deleteChange, "emit");
+    component.onDelete();
+    component.text = "test";
+    fixture.detectChanges();
+    expect(component.deleteChange.emit).toHaveBeenCalled();
+  });
+
+  it("should emit delete", () => {
+    spyOn(component.deleteChange, "emit");
+    component.onDelete();
+    component.text = "";
+    fixture.detectChanges();
+    expect(component.deleteChange.emit).toHaveBeenCalled();
+  });
 });
