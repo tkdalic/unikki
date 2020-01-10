@@ -1,4 +1,4 @@
 export interface Task {
-    text: string;
-    check: boolean;
+  text: string;
+  check: boolean;
 }
