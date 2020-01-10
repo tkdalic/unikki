@@ -3,7 +3,8 @@ import {
   OnInit,
   ViewChild,
   ElementRef,
-  ViewEncapsulation
+  ViewEncapsulation,
+  Input
 } from "@angular/core";
 import Editor from "tui-editor";
 
@@ -17,20 +18,28 @@ export class MarkdownEditorComponent implements OnInit {
   @ViewChild("markdownEditor", { static: true }) markdownEditor: ElementRef;
 
   private editor: Editor;
+  _markdown: string;
   constructor() {}
 
   ngOnInit() {
     this.editor = new Editor({
       el: this.markdownEditor.nativeElement,
+      initialValue: this._markdown,
       previewStyle: "tab"
     });
   }
 
-  set markdown(markdown: string) {
-    this.editor.setMarkdown(markdown);
+  @Input() set markdown(markdown: string) {
+    this._markdown = markdown;
+
+    if (this.editor) {
+      this.editor.setMarkdown(markdown);
+    }
   }
 
   get markdown(): string {
-    return this.editor.getMarkdown();
+    if (this.editor) {
+      return this.editor.getMarkdown();
+    }
   }
 }
