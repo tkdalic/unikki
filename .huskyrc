@@ -1,5 +1,5 @@
 {
     "hooks": {
-        "pre-commit": "yarn --cwd ./unikki/ prettier"
+        "pre-commit": "yarn --cwd ./unikki/ prettier:staged"
     }
 }

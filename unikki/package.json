@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "prettier": "prettier --write '{e2e,src,test}/**/*.{ts,html,scss,json}' README.md package.json",
     "e2e": "ng e2e",
+    "prettier:staged": "pretty-quick --staged",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -52,6 +53,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
