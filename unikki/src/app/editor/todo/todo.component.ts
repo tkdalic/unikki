@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 })
 export class TodoComponent implements OnInit {
   @Input() text = "";
+  @Input() check = false;
   @Output() enterChange = new EventEmitter<void>();
   @Output() deleteChange = new EventEmitter<void>();
   constructor() {}
