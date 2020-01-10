@@ -4,7 +4,7 @@ export default {
   title: "todo"
 };
 
-export const markdownEditor = () => ({
+export const todo = () => ({
   component: TodoComponent,
   props: { text: "test" }
 });
