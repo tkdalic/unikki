@@ -1,19 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TodoListComponent } from './todo-list.component';
-import { TodoComponent } from '../todo/todo.component';
-import { FormsModule } from '@angular/forms';
+import { TodoListComponent } from "./todo-list.component";
+import { TodoComponent } from "../todo/todo.component";
+import { FormsModule } from "@angular/forms";
 
-describe('TodoListComponent', () => {
+describe("TodoListComponent", () => {
   let component: TodoListComponent;
   let fixture: ComponentFixture<TodoListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent, TodoComponent],
+      declarations: [TodoListComponent, TodoComponent],
       imports: [FormsModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,7 +21,7 @@ describe('TodoListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
