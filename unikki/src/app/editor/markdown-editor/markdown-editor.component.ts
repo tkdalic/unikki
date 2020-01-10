@@ -15,12 +15,22 @@ import Editor from "tui-editor";
 })
 export class MarkdownEditorComponent implements OnInit {
   @ViewChild("markdownEditor", { static: true }) markdownEditor: ElementRef;
+
+  private editor: Editor;
   constructor() {}
 
   ngOnInit() {
-    new Editor({
+    this.editor = new Editor({
       el: this.markdownEditor.nativeElement,
       previewStyle: "tab"
     });
+  }
+
+  set markdown(markdown: string) {
+    this.editor.setMarkdown(markdown);
+  }
+
+  get markdown(): string {
+    return this.editor.getMarkdown();
   }
 }
