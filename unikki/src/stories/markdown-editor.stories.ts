@@ -1,10 +1,12 @@
 import { MarkdownEditorComponent } from "../app/editor/markdown-editor/markdown-editor.component";
+import { text, withKnobs } from "@storybook/addon-knobs";
 
 export default {
-  title: "markdown-editor"
+  title: "markdown-editor",
+  decorators: [withKnobs]
 };
 
 export const markdownEditor = () => ({
   component: MarkdownEditorComponent,
-  props: { markdown: "test" }
+  props: { markdown: text("markdown", "test") }
 });
