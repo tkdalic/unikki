@@ -4,7 +4,9 @@ import {
   ViewChild,
   ElementRef,
   ViewEncapsulation,
-  Input
+  Input,
+  Output,
+  EventEmitter
 } from "@angular/core";
 import Editor from "tui-editor";
 
@@ -16,9 +18,11 @@ import Editor from "tui-editor";
 })
 export class MarkdownEditorComponent implements OnInit {
   @ViewChild("markdownEditor", { static: true }) markdownEditor: ElementRef;
+  @Output() markdownChange = new EventEmitter<string>();
 
   private editor: Editor;
-  _markdown: string;
+  private _markdown: string;
+
   constructor() {}
 
   ngOnInit() {
@@ -27,6 +31,9 @@ export class MarkdownEditorComponent implements OnInit {
       initialValue: this._markdown,
       previewStyle: "tab"
     });
+    this.editor.addHook("change", () =>
+      this.onChangeMarkdown(this.editor.getMarkdown())
+    );
   }
 
   @Input() set markdown(markdown: string) {
@@ -34,12 +41,11 @@ export class MarkdownEditorComponent implements OnInit {
 
     if (this.editor) {
       this.editor.setMarkdown(markdown);
+      this.markdownChange.emit(markdown);
     }
   }
 
-  get markdown(): string {
-    if (this.editor) {
-      return this.editor.getMarkdown();
-    }
+  onChangeMarkdown(markdown: string) {
+    this.markdownChange.emit(markdown);
   }
 }

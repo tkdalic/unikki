@@ -22,9 +22,19 @@ describe("MarkdownEditorComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should setText", () => {
-    const testMarkdown = "test";
-    component.markdown = testMarkdown;
-    expect(component.markdown).toBe(testMarkdown);
+  it("should set markdown", () => {
+    const testString = "test";
+    spyOn(component.markdownChange, "emit");
+    component.markdown = testString;
+    fixture.detectChanges();
+    expect(component.markdownChange.emit).toHaveBeenCalledWith(testString);
+  });
+
+  it("should emit onchange", () => {
+    const testString = "test";
+    spyOn(component.markdownChange, "emit");
+    component.onChangeMarkdown(testString);
+    fixture.detectChanges();
+    expect(component.markdownChange.emit).toHaveBeenCalledWith(testString);
   });
 });
