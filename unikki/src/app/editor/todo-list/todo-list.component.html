@@ -1,5 +1,5 @@
 <app-todo
   *ngFor="let task of tasks"
-  [check]="task.check"
-  [text]="task.text"
+  [(check)]="task.check"
+  [(text)]="task.text"
 ></app-todo>

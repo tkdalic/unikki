@@ -8,6 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 export class TodoComponent implements OnInit {
   @Input() text = "";
   @Input() check = false;
+  @Output() textChange = new EventEmitter<string>();
+  @Output() checkChange = new EventEmitter<boolean>();
   @Output() enterChange = new EventEmitter<void>();
   @Output() deleteChange = new EventEmitter<void>();
   constructor() {}
@@ -22,5 +24,13 @@ export class TodoComponent implements OnInit {
     if (this.text.length === 0) {
       this.deleteChange.emit();
     }
+  }
+
+  onChangeText(text: string) {
+    this.textChange.emit(text);
+  }
+
+  onChangeCheck(check: boolean) {
+    this.checkChange.emit(check);
   }
 }

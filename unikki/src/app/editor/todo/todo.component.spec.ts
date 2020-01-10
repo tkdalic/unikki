@@ -46,4 +46,20 @@ describe("TodoComponent", () => {
     fixture.detectChanges();
     expect(component.deleteChange.emit).toHaveBeenCalled();
   });
+
+  it("should emit text", () => {
+    const testValue = "test";
+    spyOn(component.textChange, "emit");
+    component.onChangeText(testValue);
+    fixture.detectChanges();
+    expect(component.textChange.emit).toHaveBeenCalledWith(testValue);
+  });
+
+  it("should emit check", () => {
+    const testValue = false;
+    spyOn(component.checkChange, "emit");
+    component.onChangeCheck(testValue);
+    fixture.detectChanges();
+    expect(component.checkChange.emit).toHaveBeenCalledWith(testValue);
+  });
 });

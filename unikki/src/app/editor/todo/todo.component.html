@@ -1,10 +1,11 @@
 <div class="todo">
-  <input type="checkbox" [(ngModel)]="check" />
+  <input type="checkbox" [(ngModel)]="check" (change)="onChangeCheck(check)" />
   <input
     type="text"
     class="todo__text"
     [(ngModel)]="text"
     (keyup.enter)="onEnter()"
     (keyup.delete)="onDelete()"
+    (change)="onChangeText(text)"
   />
 </div>
