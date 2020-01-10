@@ -24,4 +24,40 @@ describe("TodoListComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("addTask", () => {
+    component.tasks = [];
+    component.firstTask = { text: "test", check: false };
+    component.addTask();
+    expect(component.tasks).toEqual([{ text: "test", check: false }]);
+    expect(component.firstTask).toEqual({ text: "", check: false });
+  });
+
+  it("onEnter", () => {
+    component.tasks = [
+      { text: "test0", check: true },
+      { text: "test1", check: true },
+      { text: "test2", check: true }
+    ];
+    component.onEnter(1);
+    expect(component.tasks).toEqual([
+      { text: "test0", check: true },
+      { text: "test1", check: true },
+      { text: "", check: false },
+      { text: "test2", check: true }
+    ]);
+  });
+
+  it("onDelete", () => {
+    component.tasks = [
+      { text: "test0", check: true },
+      { text: "test1", check: true },
+      { text: "test2", check: true }
+    ];
+    component.onDelete(1);
+    expect(component.tasks).toEqual([
+      { text: "test0", check: true },
+      { text: "test2", check: true }
+    ]);
+  });
 });
