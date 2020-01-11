@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 
 @Component({
   selector: "app-todo",
@@ -12,6 +20,9 @@ export class TodoComponent implements OnInit {
   @Output() checkChange = new EventEmitter<boolean>();
   @Output() enterChange = new EventEmitter<void>();
   @Output() deleteChange = new EventEmitter<void>();
+  @ViewChild("textElement", { static: true }) textElement: ElementRef<
+    HTMLElement
+  >;
   constructor() {}
 
   ngOnInit() {}
@@ -32,5 +43,11 @@ export class TodoComponent implements OnInit {
 
   onChangeCheck(check: boolean) {
     this.checkChange.emit(check);
+  }
+
+  focusText() {
+    console.log(this.text);
+
+    this.textElement.nativeElement.focus();
   }
 }
