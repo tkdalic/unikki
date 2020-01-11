@@ -52,8 +52,6 @@ export class TodoComponent implements OnInit {
   }
 
   focusText() {
-    console.log(this.text);
-
     this.textElement.nativeElement.focus();
   }
 
@@ -63,7 +61,6 @@ export class TodoComponent implements OnInit {
 
   onKeyup(event: KeyboardEvent) {
     const keyupCode = event.key;
-    console.log(this.keydownCode, keyupCode);
 
     if (keyupCode === this.ENTER_CODE && this.keydownCode === this.ENTER_CODE) {
       this.onEnter();
