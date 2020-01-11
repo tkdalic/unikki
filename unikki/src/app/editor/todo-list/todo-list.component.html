@@ -4,10 +4,12 @@
   (enterChange)="addTask()"
 ></app-todo>
 
-<app-todo
-  *ngFor="let task of tasks; let i = index"
-  [(check)]="task.check"
-  [(text)]="task.text"
-  (enterChange)="onEnter(i)"
-  (deleteChange)="onDelete(i)"
-></app-todo>
+<div appTodoFocus>
+  <app-todo
+    *ngFor="let task of tasks; let i = index"
+    [(check)]="task.check"
+    [(text)]="task.text"
+    (enterChange)="onEnter(i)"
+    (deleteChange)="onDelete(i)"
+  ></app-todo>
+</div>
