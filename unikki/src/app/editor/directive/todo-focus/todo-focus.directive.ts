@@ -11,7 +11,7 @@ import { TodoComponent } from "../../todo/todo.component";
 })
 export class TodoFocusDirective implements AfterContentChecked {
   @ContentChildren(TodoComponent) focusChildren: QueryList<TodoComponent>;
-  focusIndex: number = null;
+  focusIndex = 0;
   shouldFocus = false;
   constructor() {}
 
