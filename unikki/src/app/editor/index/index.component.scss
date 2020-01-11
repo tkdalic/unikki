@@ -1,0 +1,17 @@
+.editor {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  &__todo {
+    margin: 0;
+    flex-basis: 400px;
+    flex-grow: 4;
+  }
+
+  &__markdown {
+    margin: 0;
+    flex-basis: 600px;
+    flex-grow: 6;
+  }
+}

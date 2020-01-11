@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Task } from "../todo/task";
 
 @Component({
   selector: "app-index",
@@ -6,6 +7,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./index.component.scss"]
 })
 export class IndexComponent implements OnInit {
+  tasks: Task[] = [{ text: "test", check: false }];
+  markdown = "hoge";
   editorOptions = {
     previewStyle: "tab"
   };

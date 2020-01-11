@@ -1,0 +1,12 @@
+<div class="todo">
+  <input type="checkbox" [(ngModel)]="check" (change)="onChangeCheck(check)" />
+  <input
+    #textElement
+    type="text"
+    class="todo__text"
+    [(ngModel)]="text"
+    (keypress)="onKeypress($event)"
+    (keyup)="onKeyup($event)"
+    (change)="onChangeText(text)"
+  />
+</div>
