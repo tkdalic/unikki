@@ -5,7 +5,6 @@ import {
   AfterContentChecked
 } from "@angular/core";
 import { TodoComponent } from "../../todo/todo.component";
-import { nextTick } from "q";
 
 @Directive({
   selector: "[appTodoFocus]"
@@ -19,7 +18,7 @@ export class TodoFocusDirective implements AfterContentChecked {
   ngAfterContentChecked() {
     const todoComponents = this.focusChildren.toArray();
     if (this.shouldFocus) {
-      nextTick(() => todoComponents[this.focusIndex].focusText());
+      todoComponents[this.focusIndex].focusText();
       this.shouldFocus = false;
     }
     todoComponents.forEach((todo, index) => {
