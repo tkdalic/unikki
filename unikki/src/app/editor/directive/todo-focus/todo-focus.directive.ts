@@ -19,12 +19,16 @@ export class TodoFocusDirective implements AfterContentChecked {
   ngAfterContentChecked() {
     const todoList = this.focusChildren.toArray();
     if (this.shouldFocus) {
-      nextTick(() => todoList[this.focusIndex + 1].focusText());
+      nextTick(() => todoList[this.focusIndex].focusText());
       this.shouldFocus = false;
     }
     todoList.forEach((todo, index) => {
       todo.enterChange.subscribe(() => {
-        this.focusIndex = index;
+        this.focusIndex = index + 1;
+        this.shouldFocus = true;
+      });
+      todo.deleteChange.subscribe(() => {
+        this.focusIndex = index - 1;
         this.shouldFocus = true;
       });
     });
