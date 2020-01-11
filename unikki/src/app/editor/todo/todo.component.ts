@@ -24,10 +24,10 @@ export class TodoComponent implements OnInit {
     HTMLElement
   >;
 
-  keydownCode = 0;
+  keydownCode = "";
 
-  readonly ENTER_CODE = 13;
-  readonly BACK_SPACE_CODE = 8;
+  readonly ENTER_CODE = "Enter";
+  readonly BACK_SPACE_CODE = "BackSpace";
 
   constructor() {}
 
@@ -57,12 +57,12 @@ export class TodoComponent implements OnInit {
     this.textElement.nativeElement.focus();
   }
 
-  onKeydown(event: KeyboardEvent) {
-    this.keydownCode = event.keyCode;
+  onKeypress(event: KeyboardEvent) {
+    this.keydownCode = event.key;
   }
 
   onKeyup(event: KeyboardEvent) {
-    const keyupCode = event.keyCode;
+    const keyupCode = event.key;
     console.log(this.keydownCode, keyupCode);
 
     if (keyupCode === this.ENTER_CODE && this.keydownCode === this.ENTER_CODE) {

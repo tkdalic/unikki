@@ -5,7 +5,7 @@
     type="text"
     class="todo__text"
     [(ngModel)]="text"
-    (keydown)="onKeydown($event)"
+    (keypress)="onKeypress($event)"
     (keyup)="onKeyup($event)"
     (change)="onChangeText(text)"
   />
