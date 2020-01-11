@@ -23,6 +23,12 @@ export class TodoComponent implements OnInit {
   @ViewChild("textElement", { static: true }) textElement: ElementRef<
     HTMLElement
   >;
+
+  keydownCode = 0;
+
+  readonly ENTER_CODE = 13;
+  readonly BACK_SPACE_CODE = 8;
+
   constructor() {}
 
   ngOnInit() {}
@@ -49,5 +55,20 @@ export class TodoComponent implements OnInit {
     console.log(this.text);
 
     this.textElement.nativeElement.focus();
+  }
+
+  onKeydown(event: KeyboardEvent) {
+    this.keydownCode = event.keyCode;
+  }
+
+  onKeyup(event: KeyboardEvent) {
+    const keyupCode = event.keyCode;
+    console.log(this.keydownCode, keyupCode);
+
+    if (keyupCode === this.ENTER_CODE && this.keydownCode === this.ENTER_CODE) {
+      this.onEnter();
+    } else if (keyupCode === this.BACK_SPACE_CODE) {
+      this.onDelete();
+    }
   }
 }
