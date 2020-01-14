@@ -3,13 +3,14 @@ import { TodoListComponent } from "src/app/editor/todo-list/todo-list.component"
 import { NgModule } from "@angular/core";
 import { moduleMetadata } from "@storybook/angular";
 import { TodoComponent } from "src/app/editor/todo/todo.component";
+import { TodoFocusDirective } from "src/app/editor/directive/todo-focus/todo-focus.directive";
 
 export default {
   title: "todo-list",
   decorators: [
     withKnobs,
     moduleMetadata({
-      declarations: [TodoComponent]
+      declarations: [TodoComponent, TodoFocusDirective]
     })
   ]
 };
