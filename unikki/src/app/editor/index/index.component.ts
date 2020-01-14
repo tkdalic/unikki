@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Task } from "../todo/task";
+import { Task } from "src/app/resource-model/task";
 
 @Component({
   selector: "app-index",
