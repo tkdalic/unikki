@@ -27,7 +27,7 @@ export class TodoComponent implements OnInit {
   keydownCode = "";
 
   readonly ENTER_CODE = "Enter";
-  readonly BACK_SPACE_CODE = "BackSpace";
+  readonly BACK_SPACE_CODE = "Backspace";
 
   constructor() {}
 
@@ -61,7 +61,6 @@ export class TodoComponent implements OnInit {
 
   onKeyup(event: KeyboardEvent) {
     const keyupCode = event.key;
-
     if (keyupCode === this.ENTER_CODE && this.keydownCode === this.ENTER_CODE) {
       this.onEnter();
     } else if (keyupCode === this.BACK_SPACE_CODE) {
