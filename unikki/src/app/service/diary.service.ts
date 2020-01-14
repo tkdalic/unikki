@@ -14,4 +14,8 @@ export class DiaryService {
       markdown
     };
   }
+
+  file(diary: Diary): Blob {
+    return new Blob();
+  }
 }
