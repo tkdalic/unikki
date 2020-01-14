@@ -1,6 +1,7 @@
 import { TestBed } from "@angular/core/testing";
 
 import { DiaryService } from "./diary.service";
+import { Task } from "../resource-model/task";
 
 describe("DiaryService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
@@ -8,5 +9,19 @@ describe("DiaryService", () => {
   it("should be created", () => {
     const service: DiaryService = TestBed.get(DiaryService);
     expect(service).toBeTruthy();
+  });
+
+  it("should make diary", () => {
+    const tasks: Task[] = [
+      { check: false, text: "hoge1" },
+      { check: true, text: "hoge1" }
+    ];
+    const markdown = "# test\n" + "## test\n" + "testです\n";
+
+    const service: DiaryService = TestBed.get(DiaryService);
+    const diary = service.make(tasks, markdown);
+
+    expect(diary.tasks).toEqual(tasks);
+    expect(diary.markdown).toBe(markdown);
   });
 });
