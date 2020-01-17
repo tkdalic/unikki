@@ -64,18 +64,4 @@ describe("DiaryService", () => {
     expect(diary.tasks).toEqual(tasks);
     expect(diary.markdown).toEqual(markdown);
   });
-
-  it("should be file", () => {
-    const tasks: Task[] = [
-      { check: false, text: "hoge1" },
-      { check: true, text: "hoge1" }
-    ];
-    const markdown = "# test\n" + "## test\n" + "testです\n";
-
-    const service: DiaryService = TestBed.get(DiaryService);
-    const diary = service.make(tasks, markdown);
-
-    const file = service.file(diary);
-    expect(file).toBeTruthy();
-  });
 });

@@ -15,10 +15,6 @@ export class DiaryService {
     };
   }
 
-  file(diary: Diary): Blob {
-    return new Blob();
-  }
-
   toString(diary: Diary): string {
     const tasks = diary.tasks
       .map(task => {
