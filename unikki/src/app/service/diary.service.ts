@@ -18,4 +18,14 @@ export class DiaryService {
   file(diary: Diary): Blob {
     return new Blob();
   }
+
+  toString(diary: Diary): string {
+    const tasks = diary.tasks
+      .map(task => {
+        const check = task.check ? "x" : " ";
+        return `- [${check}] ${task.text}`;
+      })
+      .join("\n");
+    return `## タスク\n\n${tasks}\n\n## メモ\n\n${diary.markdown}`;
+  }
 }
