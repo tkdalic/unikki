@@ -8,13 +8,6 @@ import { Diary } from "../resource-model/diary";
 export class DiaryService {
   constructor() {}
 
-  make(tasks: Task[], markdown: string): Diary {
-    return {
-      tasks,
-      markdown
-    };
-  }
-
   toString(diary: Diary): string {
     const tasks = diary.tasks
       .map(task => {

@@ -11,20 +11,6 @@ describe("DiaryService", () => {
     expect(service).toBeTruthy();
   });
 
-  it("should make diary", () => {
-    const tasks: Task[] = [
-      { check: false, text: "hoge1" },
-      { check: true, text: "hoge1" }
-    ];
-    const markdown = "# test\n" + "## test\n" + "testです\n";
-
-    const service: DiaryService = TestBed.get(DiaryService);
-    const diary = service.make(tasks, markdown);
-
-    expect(diary.tasks).toEqual(tasks);
-    expect(diary.markdown).toBe(markdown);
-  });
-
   it("should be string", () => {
     const tasks: Task[] = [
       { check: false, text: "hoge1" },
