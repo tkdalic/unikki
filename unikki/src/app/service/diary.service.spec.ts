@@ -44,6 +44,27 @@ describe("DiaryService", () => {
     expect(service.toString({ tasks, markdown })).toBe(diaryString);
   });
 
+  it("should be parse", () => {
+    const tasks: Task[] = [
+      { check: false, text: "hoge1" },
+      { check: true, text: "hoge2" }
+    ];
+    const markdown = "# test\n" + "## test\n" + "testです\n";
+    const diaryString =
+      "## タスク\n\n" +
+      "- [ ] hoge1\n" +
+      "- [x] hoge2\n\n" +
+      "## メモ\n\n" +
+      "# test\n" +
+      "## test\n" +
+      "testです\n";
+
+    const service: DiaryService = TestBed.get(DiaryService);
+    const diary = service.parse(diaryString);
+    expect(diary.tasks).toEqual(tasks);
+    expect(diary.markdown).toEqual(markdown);
+  });
+
   it("should be file", () => {
     const tasks: Task[] = [
       { check: false, text: "hoge1" },
