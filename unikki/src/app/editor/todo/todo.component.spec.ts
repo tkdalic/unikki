@@ -31,6 +31,20 @@ describe("TodoComponent", () => {
     expect(component.enterChange.emit).toHaveBeenCalled();
   });
 
+  it("should emit focus next", () => {
+    spyOn(component.focusNext, "emit");
+    component.onArrowDown();
+    fixture.detectChanges();
+    expect(component.focusNext.emit).toHaveBeenCalled();
+  });
+
+  it("should emit focus prev", () => {
+    spyOn(component.focusPrev, "emit");
+    component.onArrowUp();
+    fixture.detectChanges();
+    expect(component.focusPrev.emit).toHaveBeenCalled();
+  });
+
   it("should not emit delete", () => {
     spyOn(component.deleteChange, "emit");
     component.onDelete();
