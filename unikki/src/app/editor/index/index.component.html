@@ -1,7 +1,13 @@
 <div class="editor">
-  <app-todo-list class="editor__todo" [tasks]="tasks"></app-todo-list>
+  <app-todo-list
+    class="editor__todo"
+    [(tasks)]="diary.tasks"
+    (tasksChange)="saveDiary()"
+  ></app-todo-list>
   <app-markdown-editor
     class="editor__markdown"
-    [markdown]="markdown"
-  ></app-markdown-editor>
+    [(markdown)]="diary.markdown"
+    (markdownChange)="saveDiary()"
+  >
+  </app-markdown-editor>
 </div>

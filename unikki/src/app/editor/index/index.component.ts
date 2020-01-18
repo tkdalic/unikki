@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Task } from "src/app/resource-model/task";
+import { DiaryService } from "src/app/service/diary.service";
+import { StorageService } from "src/app/service/storage.service";
+import { Diary } from "src/app/resource-model/diary";
 
 @Component({
   selector: "app-index",
@@ -7,12 +9,35 @@ import { Task } from "src/app/resource-model/task";
   styleUrls: ["./index.component.scss"]
 })
 export class IndexComponent implements OnInit {
-  tasks: Task[] = [{ text: "test", check: false }];
-  markdown = "hoge";
+  diary: Diary = {
+    tasks: [],
+    markdown: ""
+  };
   editorOptions = {
     previewStyle: "tab"
   };
-  constructor() {}
 
-  ngOnInit() {}
+  private readonly storageKey = "unikki";
+  constructor(
+    private diaryService: DiaryService,
+    private storageService: StorageService
+  ) {}
+
+  ngOnInit() {
+    this.loadDiary();
+  }
+
+  saveDiary(): void {
+    this.storageService.set(
+      this.storageKey,
+      this.diaryService.toString(this.diary)
+    );
+  }
+
+  loadDiary(): void {
+    const storageValue = this.storageService.get(this.storageKey);
+    if (storageValue) {
+      this.diary = this.diaryService.parse(storageValue);
+    }
+  }
 }
