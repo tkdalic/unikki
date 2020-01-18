@@ -9,6 +9,8 @@
     *ngFor="let task of tasks; let i = index"
     [(check)]="task.check"
     [(text)]="task.text"
+    (checkChange)="tasksChange.emit(tasks)"
+    (textChange)="tasksChange.emit(tasks)"
     (enterChange)="onEnter(i)"
     (deleteChange)="onDelete(i)"
   ></app-todo>
