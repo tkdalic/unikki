@@ -22,7 +22,7 @@ export class DiaryService {
     const diary: Diary = { tasks: [], markdown: "" };
     const [taskString, memoString] = value.split("## メモ\n\n", 2);
 
-    const tasks = taskString.match(/- \[( |x)\] (.+)\n/g);
+    const tasks = taskString.match(/- \[( |x)\] (.*)\n/g);
     if (tasks) {
       diary.tasks = tasks.map(
         (task: string): Task => {

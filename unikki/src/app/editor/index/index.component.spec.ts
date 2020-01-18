@@ -31,4 +31,16 @@ describe("IndexComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("can save and load", () => {
+    const testDiary = {
+      tasks: [{ check: true, text: "test" }],
+      markdown: "test"
+    };
+    component.diary = Object.assign(testDiary);
+    component.saveDiary();
+    component.diary = null;
+    component.loadDiary();
+    expect(component.diary).toEqual(testDiary);
+  });
 });
