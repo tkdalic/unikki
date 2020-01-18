@@ -1,7 +1,7 @@
 <div class="editor">
-  <app-todo-list class="editor__todo" [tasks]="tasks"></app-todo-list>
+  <app-todo-list class="editor__todo" [(tasks)]="tasks"></app-todo-list>
   <app-markdown-editor
     class="editor__markdown"
-    [markdown]="markdown"
+    [(markdown)]="markdown"
   ></app-markdown-editor>
 </div>
