@@ -10,5 +10,8 @@ export const layout = () => ({
   moduleMetadata: {
     declarations: [LayoutComponent]
   },
-  template: `<app-layout></app-layout>`
+  template: `<app-layout>
+  <ng-container header>header</ng-container>
+  <ng-container main>main</ng-container>
+  </app-layout>`
 });
