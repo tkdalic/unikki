@@ -1,0 +1,13 @@
+.header {
+  height: 3rem;
+  width: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  &__title {
+    padding: 0.6rem 1rem;
+    font-size: 1.8rem;
+  }
+}
