@@ -9,9 +9,14 @@
     flex-grow: 4;
   }
 
-  &__markdown {
+  &__memo {
     margin: 0;
     flex-basis: 600px;
     flex-grow: 6;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    padding: 0.5rem;
   }
 }
