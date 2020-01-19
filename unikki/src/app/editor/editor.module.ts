@@ -8,6 +8,7 @@ import { MarkdownEditorComponent } from "./markdown-editor/markdown-editor.compo
 import { TodoComponent } from "./todo/todo.component";
 import { TodoListComponent } from "./todo-list/todo-list.component";
 import { TodoFocusDirective } from "./directive/todo-focus/todo-focus.directive";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import { TodoFocusDirective } from "./directive/todo-focus/todo-focus.directive"
     TodoListComponent,
     TodoFocusDirective
   ],
-  imports: [CommonModule, EditorRoutingModule, FormsModule]
+  imports: [CommonModule, EditorRoutingModule, FormsModule, SharedModule]
 })
 export class EditorModule {}
