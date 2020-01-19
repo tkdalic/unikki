@@ -19,7 +19,7 @@ export class TodoFocusDirective implements AfterContentChecked {
   ngAfterContentChecked() {
     const todoComponents = this.focusChildren.toArray();
     if (this.shouldFocus) {
-      if (this.focusIndex >= 0) {
+      if (this.focusIndex >= 0 && this.focusIndex < todoComponents.length) {
         nextTick(() => todoComponents[this.focusIndex].focusText());
       }
       this.shouldFocus = false;
@@ -30,6 +30,14 @@ export class TodoFocusDirective implements AfterContentChecked {
         this.shouldFocus = true;
       });
       todo.deleteChange.subscribe(() => {
+        this.focusIndex = index - 1;
+        this.shouldFocus = true;
+      });
+      todo.focusNext.subscribe(() => {
+        this.focusIndex = index + 1;
+        this.shouldFocus = true;
+      });
+      todo.focusPrev.subscribe(() => {
         this.focusIndex = index - 1;
         this.shouldFocus = true;
       });
