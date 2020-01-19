@@ -5,6 +5,7 @@ import { MarkdownEditorComponent } from "../markdown-editor/markdown-editor.comp
 import { TodoListComponent } from "../todo-list/todo-list.component";
 import { TodoComponent } from "../todo/todo.component";
 import { FormsModule } from "@angular/forms";
+import { SharedModule } from "src/app/shared/shared.module";
 
 describe("IndexComponent", () => {
   let component: IndexComponent;
@@ -18,7 +19,7 @@ describe("IndexComponent", () => {
         TodoListComponent,
         TodoComponent
       ],
-      imports: [FormsModule]
+      imports: [FormsModule, SharedModule]
     }).compileComponents();
   }));
 
