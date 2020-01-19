@@ -20,6 +20,9 @@ export class TodoComponent implements OnInit {
   @Output() checkChange = new EventEmitter<boolean>();
   @Output() enterChange = new EventEmitter<void>();
   @Output() deleteChange = new EventEmitter<void>();
+  @Output() focusNext = new EventEmitter<void>();
+  @Output() focusPrev = new EventEmitter<void>();
+  @Output() focusBefore = new EventEmitter<void>();
   @ViewChild("textElement", { static: true }) textElement: ElementRef<
     HTMLElement
   >;
@@ -28,6 +31,8 @@ export class TodoComponent implements OnInit {
 
   readonly ENTER_CODE = "Enter";
   readonly BACK_SPACE_CODE = "Backspace";
+  readonly ARROW_UP_CODE = "ArrowUp";
+  readonly ARROW_DOWN_CODE = "ArrowDown";
 
   constructor() {}
 
@@ -51,6 +56,14 @@ export class TodoComponent implements OnInit {
     this.checkChange.emit(check);
   }
 
+  onArrowUp() {
+    this.focusPrev.emit();
+  }
+
+  onArrowDown() {
+    this.focusNext.emit();
+  }
+
   focusText() {
     this.textElement.nativeElement.focus();
   }
@@ -65,6 +78,10 @@ export class TodoComponent implements OnInit {
       this.onEnter();
     } else if (keyupCode === this.BACK_SPACE_CODE) {
       this.onDelete();
+    } else if (keyupCode === this.ARROW_UP_CODE) {
+      this.onArrowUp();
+    } else if (keyupCode === this.ARROW_DOWN_CODE) {
+      this.onArrowDown();
     }
   }
 }
