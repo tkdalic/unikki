@@ -28,6 +28,14 @@
             "scripts": []
           },
           "configurations": {
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -65,6 +73,9 @@
             "browserTarget": "unikki:build"
           },
           "configurations": {
+            "local": {
+              "browserTarget": "unikki:build:local"
+            },
             "production": {
               "browserTarget": "unikki:build:production"
             }
@@ -106,6 +117,9 @@
             "devServerTarget": "unikki:serve"
           },
           "configurations": {
+            "local": {
+              "devServerTarget": "unikki:serve:local"
+            },
             "production": {
               "devServerTarget": "unikki:serve:production"
             }
