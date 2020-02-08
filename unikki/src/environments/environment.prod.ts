@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: false,
+  projectId: "",
+  clientId: "",
+  apiKey: "",
+  scopes: ""
 };
