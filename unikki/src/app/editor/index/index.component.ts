@@ -31,8 +31,11 @@ export class IndexComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadDiary();
-    this.getUnikkiFile();
+    this.getUnikkiFile().then(() => {
+      if (this.diary) {
+        this.loadDiary();
+      }
+    });
   }
 
   saveDiary(): void {
