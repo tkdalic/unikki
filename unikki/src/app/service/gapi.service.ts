@@ -71,10 +71,10 @@ export class GapiService {
 
   updateFile(fileId: string, media: File): Promise<XMLHttpRequest> {
     return new Promise((resolve, reject) => {
-      var xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
       xhr.responseType = "json";
       xhr.onreadystatechange = () => {
-        if (xhr.readyState != XMLHttpRequest.DONE) {
+        if (xhr.readyState !== XMLHttpRequest.DONE) {
           return;
         }
         resolve(xhr.response);
