@@ -6,7 +6,7 @@ import { OverlayComponent } from "./overlay/overlay.component";
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, OverlayComponent],
-  exports: [HeaderComponent, LayoutComponent],
+  exports: [HeaderComponent, LayoutComponent, OverlayComponent],
   imports: [CommonModule]
 })
 export class SharedModule {}
