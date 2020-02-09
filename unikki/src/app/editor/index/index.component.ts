@@ -27,6 +27,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.loadDiary();
+    this.getUnikkiFile();
   }
 
   saveDiary(): void {
@@ -34,6 +35,28 @@ export class IndexComponent implements OnInit {
       this.storageKey,
       this.diaryService.toString(this.diary)
     );
+  }
+
+  getUnikkiFile() {
+    this.gapiService
+      .auth()
+      .then(async authResult => {
+        if (authResult && !authResult.error) {
+          await gapi.client.load("drive", "v3");
+          const directory = await this.gapiService.getOrCreateDirectory();
+          if (directory === null) {
+            window.alert("I can't make directory");
+          }
+          const unikkiFile = await this.gapiService.getUnikkiFile(
+            directory,
+            "20200205.md"
+          );
+          console.log(unikkiFile);
+        } else {
+          window.alert("Auth was not successful");
+        }
+      })
+      .catch(error => window.alert(error));
   }
 
   loadDiary(): void {

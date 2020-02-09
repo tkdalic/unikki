@@ -5,23 +5,7 @@ import { environment } from "./../..//environments/environment";
   providedIn: "root"
 })
 export class GapiService {
-  constructor() {
-    this.auth().then(async authResult => {
-      if (authResult && !authResult.error) {
-        await gapi.client.load("drive", "v3");
-        const directory = await this.getOrCreateDirectory(
-          GapiService.DIRECTORY_NAME
-        );
-        if (directory === null) {
-          window.alert("I can't make directory");
-        }
-        const unikkiFile = await this.getUnikkiFile(directory, "20200205.md");
-        console.log(unikkiFile);
-      } else {
-        window.alert("Auth was not successful");
-      }
-    });
-  }
+  constructor() {}
 
   private static readonly PROJECT_ID = environment.projectId;
   private static readonly CLIENT_ID = environment.clientId;
@@ -78,7 +62,7 @@ export class GapiService {
   }
 
   async getOrCreateDirectory(
-    directoryName: string
+    directoryName: string = GapiService.DIRECTORY_NAME
   ): Promise<gapi.client.drive.File | null> {
     const unikkiDirectories = await this.listFiles(
       `mimeType = 'application/vnd.google-apps.folder' and name = '${directoryName}'`
