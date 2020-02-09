@@ -3,6 +3,7 @@ import { DiaryService } from "src/app/service/diary.service";
 import { StorageService } from "src/app/service/storage.service";
 import { Diary } from "src/app/resource-model/diary";
 import { GapiService } from "src/app/service/gapi.service";
+import { throwError } from "rxjs";
 
 @Component({
   selector: "app-index",
@@ -37,26 +38,21 @@ export class IndexComponent implements OnInit {
     );
   }
 
-  getUnikkiFile() {
-    this.gapiService
-      .auth()
-      .then(async authResult => {
-        if (authResult && !authResult.error) {
-          await gapi.client.load("drive", "v3");
-          const directory = await this.gapiService.getOrCreateDirectory();
-          if (directory === null) {
-            window.alert("I can't make directory");
-          }
-          const unikkiFile = await this.gapiService.getUnikkiFile(
-            directory,
-            "20200205.md"
-          );
-          console.log(unikkiFile);
-        } else {
-          window.alert("Auth was not successful");
-        }
-      })
-      .catch(error => window.alert(error));
+  async getUnikkiFile() {
+    const authResult = await this.gapiService.auth();
+    if (!authResult || authResult.error) {
+      window.alert("access was not sucess");
+      return;
+    }
+    await gapi.client.load("drive", "v3");
+    const directory = await this.gapiService.getOrCreateDirectory();
+    if (directory === null) {
+      window.alert("I can't make directory");
+    }
+    const unikkiFile = await this.gapiService.getUnikkiFile(
+      directory,
+      "20200205.md"
+    );
   }
 
   loadDiary(): void {
