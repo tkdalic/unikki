@@ -4,21 +4,21 @@ import { Injectable } from "@angular/core";
   providedIn: "root"
 })
 export class OverlayService {
-  private _isDisplay = false;
+  private isDisplayFlg = false;
   constructor() {}
 
   get isDisplay(): boolean {
-    return this._isDisplay;
+    return this.isDisplayFlg;
   }
   show() {
-    this._isDisplay = true;
+    this.isDisplayFlg = true;
   }
 
   hide() {
-    this._isDisplay = false;
+    this.isDisplayFlg = false;
   }
 
   toggle() {
-    this._isDisplay = !this.isDisplay;
+    this.isDisplayFlg = !this.isDisplay;
   }
 }
