@@ -52,8 +52,18 @@ export class IndexComponent implements OnInit {
     }
     const unikkiFile = await this.gapiService.getUnikkiFile(
       directory,
-      "20200205.md"
+      "20200209.md"
     );
+
+    if (!unikkiFile) {
+      return;
+    }
+    const contents = await this.gapiService.getFileContents(unikkiFile.id);
+    if (!contents) {
+      return;
+    }
+
+    this.diary = this.diaryService.parse(contents);
   }
 
   loadDiary(): void {
