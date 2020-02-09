@@ -69,6 +69,30 @@ export class GapiService {
     );
   }
 
+  updateFile(fileId: string, media: File): Promise<XMLHttpRequest> {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = "json";
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) {
+          return;
+        }
+        resolve(xhr.response);
+      };
+      xhr.open(
+        "PATCH",
+        "https://www.googleapis.com/upload/drive/v3/files/" +
+          fileId +
+          "?uploadType=media"
+      );
+      xhr.setRequestHeader(
+        "Authorization",
+        "Bearer " + gapi.auth.getToken().access_token
+      );
+      xhr.send(media);
+    });
+  }
+
   async getOrCreateDirectory(
     directoryName: string = GapiService.DIRECTORY_NAME
   ): Promise<gapi.client.drive.File | null> {

@@ -15,6 +15,9 @@ export class IndexComponent implements OnInit {
     tasks: [],
     markdown: ""
   };
+
+  title = "20200209.md";
+  fileId = "";
   editorOptions = {
     previewStyle: "tab"
   };
@@ -28,8 +31,11 @@ export class IndexComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadDiary();
-    this.getUnikkiFile();
+    this.getUnikkiFile().then(() => {
+      if (this.diary) {
+        this.loadDiary();
+      }
+    });
   }
 
   saveDiary(): void {
@@ -52,18 +58,35 @@ export class IndexComponent implements OnInit {
     }
     const unikkiFile = await this.gapiService.getUnikkiFile(
       directory,
-      "20200209.md"
+      this.title
     );
 
     if (!unikkiFile) {
       return;
     }
+    this.fileId = unikkiFile.id;
     const contents = await this.gapiService.getFileContents(unikkiFile.id);
     if (!contents) {
       return;
     }
 
     this.diary = this.diaryService.parse(contents);
+  }
+
+  async updateUnikkiFile() {
+    const markdownFile = {
+      title: this.title,
+      contents: this.diaryService.toString(this.diary)
+    };
+
+    const response = await this.gapiService.updateFile(
+      this.fileId,
+      this.fileService.make(markdownFile)
+    );
+
+    if (response) {
+      window.alert("success!");
+    }
   }
 
   loadDiary(): void {
