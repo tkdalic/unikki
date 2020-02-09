@@ -33,12 +33,10 @@ export class IndexComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.loadDiary();
     this.overlayService.show();
     this.getUnikkiFile().then(() => {
       this.overlayService.hide();
-      if (!this.diary) {
-        this.loadDiary();
-      }
     });
   }
 
