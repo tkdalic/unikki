@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { DiaryService } from "src/app/service/diary.service";
 import { StorageService } from "src/app/service/storage.service";
 import { Diary } from "src/app/resource-model/diary";
+import { GapiService } from "src/app/service/gapi.service";
+import { throwError } from "rxjs";
 
 @Component({
   selector: "app-index",
@@ -20,17 +22,36 @@ export class IndexComponent implements OnInit {
   private readonly storageKey = "unikki";
   constructor(
     private diaryService: DiaryService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private gapiService: GapiService
   ) {}
 
   ngOnInit() {
     this.loadDiary();
+    this.getUnikkiFile();
   }
 
   saveDiary(): void {
     this.storageService.set(
       this.storageKey,
       this.diaryService.toString(this.diary)
+    );
+  }
+
+  async getUnikkiFile() {
+    const authResult = await this.gapiService.auth();
+    if (!authResult || authResult.error) {
+      window.alert("access was not sucess");
+      return;
+    }
+    await gapi.client.load("drive", "v3");
+    const directory = await this.gapiService.getOrCreateDirectory();
+    if (directory === null) {
+      window.alert("I can't make directory");
+    }
+    const unikkiFile = await this.gapiService.getUnikkiFile(
+      directory,
+      "20200205.md"
     );
   }
 
