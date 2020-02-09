@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DiaryService } from "src/app/service/diary.service";
 import { StorageService } from "src/app/service/storage.service";
 import { Diary } from "src/app/resource-model/diary";
+import { GapiService } from "src/app/service/gapi.service";
 
 @Component({
   selector: "app-index",
@@ -20,7 +21,8 @@ export class IndexComponent implements OnInit {
   private readonly storageKey = "unikki";
   constructor(
     private diaryService: DiaryService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private gapiService: GapiService
   ) {}
 
   ngOnInit() {
