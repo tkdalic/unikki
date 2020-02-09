@@ -32,7 +32,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.getUnikkiFile().then(() => {
-      if (this.diary) {
+      if (!this.diary) {
         this.loadDiary();
       }
     });
