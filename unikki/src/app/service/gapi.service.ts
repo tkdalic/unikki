@@ -44,20 +44,28 @@ export class GapiService {
     );
   }
 
-  makeFolder(
-    folderName: string
+  getFileContents(fileId: string): Promise<string> {
+    return new Promise((resolve, reject) =>
+      gapi.client.drive.files
+        .get({
+          fileId,
+          alt: "media"
+        })
+        .then(response => resolve(response.body))
+    );
+  }
+
+  makeFile(
+    name: string,
+    mimeType: string,
+    otherOptions: object = {}
   ): Promise<gapi.client.Response<gapi.client.drive.File>> {
     return new Promise((resolve, reject) =>
       gapi.client.drive.files
         .create({
-          resource: {
-            name: folderName,
-            mimeType: "application/vnd.google-apps.folder"
-          }
+          resource: { name, mimeType, ...otherOptions }
         })
-        .execute(response => {
-          resolve(response);
-        })
+        .execute(response => resolve(response))
     );
   }
 
@@ -70,8 +78,9 @@ export class GapiService {
     if (unikkiDirectories.result.files.length) {
       return unikkiDirectories.result.files[0];
     }
-    const unikkiDirectoryResponse = await this.makeFolder(
-      GapiService.DIRECTORY_NAME
+    const unikkiDirectoryResponse = await this.makeFile(
+      GapiService.DIRECTORY_NAME,
+      "application/vnd.google-apps.folder"
     );
     if (unikkiDirectoryResponse.result.id) {
       return unikkiDirectories.result;
@@ -86,6 +95,15 @@ export class GapiService {
     const unikkiFiles = await this.listFiles(
       `mimeType = 'text/markdown' and trashed = false and '${directory.id}' in parents and name = '${fileName}'`
     );
-    return unikkiFiles.result.files[0] || null;
+    if (unikkiFiles.result.files.length) {
+      return unikkiFiles.result.files[0];
+    }
+    const makeFile = await this.makeFile(fileName, "text/markdown", {
+      parents: [directory.id]
+    });
+    if (makeFile.result.id) {
+      return makeFile.result;
+    }
+    return null;
   }
 }
