@@ -3,7 +3,7 @@ import { DiaryService } from "src/app/service/diary.service";
 import { StorageService } from "src/app/service/storage.service";
 import { Diary } from "src/app/resource-model/diary";
 import { GapiService } from "src/app/service/gapi.service";
-import { throwError } from "rxjs";
+import { FileService } from "src/app/service/file.service";
 
 @Component({
   selector: "app-index",
@@ -23,7 +23,8 @@ export class IndexComponent implements OnInit {
   constructor(
     private diaryService: DiaryService,
     private storageService: StorageService,
-    private gapiService: GapiService
+    private gapiService: GapiService,
+    private fileService: FileService
   ) {}
 
   ngOnInit() {
