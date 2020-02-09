@@ -5,11 +5,7 @@ import { MarkdownFile } from "../resource-model/markdownFile";
   providedIn: "root"
 })
 export class FileService {
-  constructor() {
-    const file = this.make({ title: "hoge.md", contents: "# test" });
-    console.log(file);
-    this.read(file).then(result => console.log(result));
-  }
+  constructor() {}
 
   make(markdownFile: MarkdownFile): File {
     return new File([markdownFile.contents], markdownFile.title, {
