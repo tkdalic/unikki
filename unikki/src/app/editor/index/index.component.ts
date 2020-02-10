@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { DiaryService } from "src/app/service/diary.service";
 import { StorageService } from "src/app/service/storage.service";
 import { Diary } from "src/app/resource-model/diary";
@@ -17,7 +17,7 @@ export class IndexComponent implements OnInit {
     markdown: ""
   };
 
-  title = "20200209.md";
+  title = "";
   fileId = "";
   editorOptions = {
     previewStyle: "tab"
@@ -29,12 +29,15 @@ export class IndexComponent implements OnInit {
     private storageService: StorageService,
     private gapiService: GapiService,
     private fileService: FileService,
-    private overlayService: OverlayService
-  ) {}
+    private overlayService: OverlayService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {
+    this.title = this.diaryService.makeTitle();
+    this.overlayService.show();
+    this.loadDiary();
+  }
 
   ngOnInit() {
-    this.loadDiary();
-    this.overlayService.show();
     this.getUnikkiFile().then(() => {
       this.overlayService.hide();
     });
