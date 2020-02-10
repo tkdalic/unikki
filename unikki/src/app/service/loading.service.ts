@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 @Injectable({
   providedIn: "root"
 })
-export class OverlayService {
+export class LoadingService {
   private isDisplayFlg = false;
   constructor() {}
 
