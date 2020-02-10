@@ -19,6 +19,7 @@ export class IndexComponent implements OnInit {
 
   title = "";
   fileId = "";
+  isAuth = false;
   editorOptions = {
     previewStyle: "tab"
   };
@@ -39,6 +40,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.getUnikkiFile().then(() => {
+      this.isAuth = true;
       this.loadingService.hide();
     });
   }
@@ -84,10 +86,12 @@ export class IndexComponent implements OnInit {
       contents: this.diaryService.toString(this.diary)
     };
 
+    this.loadingService.show();
     const response = await this.gapiService.updateFile(
       this.fileId,
       this.fileService.make(markdownFile)
     );
+    this.loadingService.hide();
 
     if (response) {
       window.alert("success!");

@@ -1,22 +1,29 @@
 <app-layout>
   <app-header header></app-header>
-  <div class="editor" main>
-    <div class="editor__todo">
-      <h2 class="editor__title">To-Do</h2>
-      <app-todo-list
-        [(tasks)]="diary.tasks"
-        (tasksChange)="saveDiary()"
-      ></app-todo-list>
+  <div main>
+    <div class="gapiInfo" *ngIf="isAuth">
+      <h2 class="gapiInfo__title">{{ title }}</h2>
+      <button class="gapiInfo__sync" (click)="updateUnikkiFile()">
+        Sync
+      </button>
     </div>
+    <div class="editor">
+      <div class="editor__todo">
+        <h2 class="editor__title">To-Do</h2>
+        <app-todo-list
+          [(tasks)]="diary.tasks"
+          (tasksChange)="saveDiary()"
+        ></app-todo-list>
+      </div>
 
-    <div class="editor__memo">
-      <h2 class="editor__title">Memo</h2>
-      <app-markdown-editor
-        [(markdown)]="diary.markdown"
-        (markdownChange)="saveDiary()"
-      >
-      </app-markdown-editor>
+      <div class="editor__memo">
+        <h2 class="editor__title">Memo</h2>
+        <app-markdown-editor
+          [(markdown)]="diary.markdown"
+          (markdownChange)="saveDiary()"
+        >
+        </app-markdown-editor>
+      </div>
     </div>
-    <button (click)="updateUnikkiFile()">ドライブへアップロード</button>
   </div>
 </app-layout>
