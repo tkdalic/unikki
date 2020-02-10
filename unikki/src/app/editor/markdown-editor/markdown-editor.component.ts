@@ -37,6 +37,9 @@ export class MarkdownEditorComponent implements OnInit {
   }
 
   @Input() set markdown(markdown: string) {
+    if (this.markdownText === markdown) {
+      return;
+    }
     this.markdownText = markdown;
 
     if (this.editor) {
@@ -46,6 +49,7 @@ export class MarkdownEditorComponent implements OnInit {
   }
 
   onChangeMarkdown(markdown: string) {
+    this.markdownText = markdown;
     this.markdownChange.emit(markdown);
   }
 }
