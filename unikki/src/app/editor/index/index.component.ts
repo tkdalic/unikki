@@ -4,6 +4,7 @@ import { StorageService } from "src/app/service/storage.service";
 import { Diary } from "src/app/resource-model/diary";
 import { GapiService } from "src/app/service/gapi.service";
 import { FileService } from "src/app/service/file.service";
+import { OverlayService } from "src/app/service/overlay.service";
 
 @Component({
   selector: "app-index",
@@ -27,14 +28,15 @@ export class IndexComponent implements OnInit {
     private diaryService: DiaryService,
     private storageService: StorageService,
     private gapiService: GapiService,
-    private fileService: FileService
+    private fileService: FileService,
+    private overlayService: OverlayService
   ) {}
 
   ngOnInit() {
+    this.loadDiary();
+    this.overlayService.show();
     this.getUnikkiFile().then(() => {
-      if (!this.diary) {
-        this.loadDiary();
-      }
+      this.overlayService.hide();
     });
   }
 
