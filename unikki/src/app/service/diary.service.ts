@@ -34,4 +34,11 @@ export class DiaryService {
     diary.markdown = memoString;
     return diary;
   }
+
+  makeTitle(date: Date = new Date()): string {
+    const year = date.getFullYear().toString();
+    const month = ("0" + (date.getMonth() + 1)).substr(-2);
+    const day = ("0" + date.getDate()).substr(-2);
+    return `${year}${month}${day}.md`;
+  }
 }
