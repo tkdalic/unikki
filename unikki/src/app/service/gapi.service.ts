@@ -23,7 +23,7 @@ export class GapiService {
         {
           client_id: GapiService.CLIENT_ID,
           scope: GapiService.SCOPES,
-          immediate: false
+          immediate: true
         },
         response => resolve(response)
       );
