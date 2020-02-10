@@ -50,4 +50,11 @@ describe("DiaryService", () => {
     expect(diary.tasks).toEqual(tasks);
     expect(diary.markdown).toEqual(markdown);
   });
+
+  it("should make diary title", () => {
+    const service: DiaryService = TestBed.get(DiaryService);
+    const date = new Date(2020, 1, 10);
+    const title = "20200210.md";
+    expect(service.makeTitle(date)).toBe(title);
+  });
 });
