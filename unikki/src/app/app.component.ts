@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { OverlayService } from "./service/overlay.service";
+import { LoadingService } from "./service/loading.service";
 
 @Component({
   selector: "app-root",
@@ -8,5 +8,5 @@ import { OverlayService } from "./service/overlay.service";
 })
 export class AppComponent {
   title = "unikki";
-  constructor(public overlayService: OverlayService) {}
+  constructor(public loadingService: LoadingService) {}
 }
