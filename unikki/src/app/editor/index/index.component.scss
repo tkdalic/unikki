@@ -1,3 +1,21 @@
+.gapiInfo {
+  display: flex;
+  padding: 0.2rem 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__sync {
+    height: 2.5rem;
+    border: solid 1px #ccc;
+    border-radius: 1.5rem;
+    padding: 0 0.5rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 .editor {
   display: flex;
   flex-wrap: wrap;
@@ -13,10 +31,5 @@
     margin: 0;
     flex-basis: 600px;
     flex-grow: 6;
-  }
-
-  &__title {
-    font-size: 1.5rem;
-    padding: 0.5rem;
   }
 }
