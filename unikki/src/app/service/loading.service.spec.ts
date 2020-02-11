@@ -6,24 +6,24 @@ describe("LoadingService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it("should be created", () => {
-    const service: LoadingService = TestBed.get(LoadingService);
+    const service: LoadingService = TestBed.inject(LoadingService);
     expect(service).toBeTruthy();
   });
 
   it("should show", () => {
-    const service: LoadingService = TestBed.get(LoadingService);
+    const service: LoadingService = TestBed.inject(LoadingService);
     service.show();
     expect(service.isDisplay).toBeTruthy();
   });
 
   it("should hide", () => {
-    const service: LoadingService = TestBed.get(LoadingService);
+    const service: LoadingService = TestBed.inject(LoadingService);
     service.hide();
     expect(service.isDisplay).toBeFalsy();
   });
 
   it("should toggle", () => {
-    const service: LoadingService = TestBed.get(LoadingService);
+    const service: LoadingService = TestBed.inject(LoadingService);
     service.hide();
     service.toggle();
     expect(service.isDisplay).toBeTruthy();

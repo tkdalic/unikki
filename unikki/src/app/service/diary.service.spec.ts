@@ -7,7 +7,7 @@ describe("DiaryService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it("should be created", () => {
-    const service: DiaryService = TestBed.get(DiaryService);
+    const service: DiaryService = TestBed.inject(DiaryService);
     expect(service).toBeTruthy();
   });
 
@@ -26,7 +26,7 @@ describe("DiaryService", () => {
       "## test\n" +
       "testです\n";
 
-    const service: DiaryService = TestBed.get(DiaryService);
+    const service: DiaryService = TestBed.inject(DiaryService);
     expect(service.toString({ tasks, markdown })).toBe(diaryString);
   });
 
@@ -45,14 +45,14 @@ describe("DiaryService", () => {
       "## test\n" +
       "testです\n";
 
-    const service: DiaryService = TestBed.get(DiaryService);
+    const service: DiaryService = TestBed.inject(DiaryService);
     const diary = service.parse(diaryString);
     expect(diary.tasks).toEqual(tasks);
     expect(diary.markdown).toEqual(markdown);
   });
 
   it("should make diary title", () => {
-    const service: DiaryService = TestBed.get(DiaryService);
+    const service: DiaryService = TestBed.inject(DiaryService);
     const date = new Date(2020, 1, 10);
     const title = "20200210.md";
     expect(service.makeTitle(date)).toBe(title);

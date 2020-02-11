@@ -205,6 +205,11 @@
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-9.0.0.tgz#11784fc8ce9cb3314c7ec1083ff9be7c611181c2"
   integrity sha512-yyOcStpgN5t8wGRNO85mo0jplXkntP+v2tmSxNx45pahqmofSFm+QCEFa2zHQuMr7NoiGERhd0Tae7NDCCjtjA==
 
+"@angular/service-worker@~9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-9.0.0.tgz#579014140019bc1e996091b98a0d64790d082350"
+  integrity sha512-QZjA9Syhz3sCcugUknXorScgSjVS6jhaCZilTmfPPaKazw0tASNw1SfjrZ60aOPCmoJGRkWyP/Hzzi/KKVSQjQ==
+
 "@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"

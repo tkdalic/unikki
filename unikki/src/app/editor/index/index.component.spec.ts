@@ -11,7 +11,7 @@ describe("IndexComponent", () => {
   let component: IndexComponent;
   let fixture: ComponentFixture<IndexComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [
         IndexComponent,
@@ -21,11 +21,10 @@ describe("IndexComponent", () => {
       ],
       imports: [FormsModule, SharedModule]
     }).compileComponents();
-  }));
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(IndexComponent);
     component = fixture.componentInstance;
+    // gapiの処理を置き換える
+    component.getUnikkiFile = async () => {};
     fixture.detectChanges();
   });
 
@@ -33,15 +32,15 @@ describe("IndexComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("can save and load", () => {
+  it("can save and load", async () => {
     const testDiary = {
       tasks: [{ check: true, text: "test" }],
       markdown: "test"
     };
     component.diary = Object.assign(testDiary);
-    component.saveDiary();
+    await component.saveDiary();
     component.diary = null;
-    component.loadDiary();
+    await component.loadDiary();
     expect(component.diary).toEqual(testDiary);
   });
 });

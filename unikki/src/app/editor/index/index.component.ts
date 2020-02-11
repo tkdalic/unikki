@@ -45,8 +45,8 @@ export class IndexComponent implements OnInit {
     });
   }
 
-  saveDiary(): void {
-    this.storageService.set(
+  async saveDiary(): Promise<void> {
+    await this.storageService.set(
       this.storageKey,
       this.diaryService.toString(this.diary)
     );
@@ -98,8 +98,8 @@ export class IndexComponent implements OnInit {
     }
   }
 
-  loadDiary(): void {
-    const storageValue = this.storageService.get(this.storageKey);
+  async loadDiary(): Promise<void> {
+    const storageValue = await this.storageService.get(this.storageKey);
     if (storageValue) {
       this.diary = this.diaryService.parse(storageValue);
     }
