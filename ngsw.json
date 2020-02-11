@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581390340932,
+  "timestamp": 1581393663217,
   "index": "/unikki/index.html",
   "assetGroups": [
     {
@@ -58,7 +58,7 @@
     "/unikki/index.html": "22b031089e7449c7193b0693a1a115261c6f8539",
     "/unikki/main-es2015.5fe5851d7a635b0ca655.js": "42a1b02eb32ddb8e6f964fed2cb664767f700ec8",
     "/unikki/main-es5.5fe5851d7a635b0ca655.js": "1b2d603190624257bfcce27ecd49d5350df2759b",
-    "/unikki/manifest.webmanifest": "0b6596b8056fa6dac2b5c6f7289cc0c7e2a65193",
+    "/unikki/manifest.webmanifest": "b9a0e17977f98380e1e0eeb24f040931b1038fae",
     "/unikki/polyfills-es2015.b0aa1fb02b6e66e5170c.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "/unikki/polyfills-es5.829515bf2b57364e0060.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
     "/unikki/runtime-es2015.774ac68827a50db9d33c.js": "30199763ed02273f5cb2680035ce7a4c20267cb5",
