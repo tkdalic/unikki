@@ -1,7 +1,7 @@
 {
   "extends": "../tsconfig.app.json",
   "compilerOptions": {
-    "types": ["node", "gapi", "gapi.client.drive"]
+    "types": ["node", "gapi", "gapi.auth2", "gapi.client.drive"]
   },
   "exclude": [
     "../src/test.ts",
