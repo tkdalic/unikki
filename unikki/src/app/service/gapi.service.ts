@@ -17,21 +17,23 @@ export class GapiService {
   /**
    * Authorize Google Compute Engine API.
    */
-  auth(): Promise<Boolean> {
-    return new Promise((resolve, reject) => {
+  auth(): Promise<boolean> {
+    return new Promise(resolve => {
       gapi.load("auth2", () => {
         gapi.auth2
           .init({
             client_id: GapiService.CLIENT_ID,
             scope: GapiService.SCOPES
           })
-          .then(response => {
+          .then(() => {
+            if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+              return resolve(true);
+            }
             gapi.auth2
               .getAuthInstance()
               .signIn()
               .then(response => resolve(response.isSignedIn()));
-          })
-          .catch(err => reject(err));
+          });
       });
     });
   }
@@ -39,7 +41,7 @@ export class GapiService {
   listFiles(
     query?: string
   ): Promise<gapi.client.Response<gapi.client.drive.FileList>> {
-    return new Promise((resolve, reject) =>
+    return new Promise(resolve =>
       gapi.client.drive.files
         .list({
           corpora: "user",
@@ -51,7 +53,7 @@ export class GapiService {
   }
 
   getFileContents(fileId: string): Promise<string> {
-    return new Promise((resolve, reject) =>
+    return new Promise(resolve =>
       gapi.client.drive.files
         .get({
           fileId,
@@ -66,7 +68,7 @@ export class GapiService {
     mimeType: string,
     otherOptions: object = {}
   ): Promise<gapi.client.Response<gapi.client.drive.File>> {
-    return new Promise((resolve, reject) =>
+    return new Promise(resolve =>
       gapi.client.drive.files
         .create({
           resource: { name, mimeType, ...otherOptions }
@@ -76,7 +78,7 @@ export class GapiService {
   }
 
   updateFile(fileId: string, media: File): Promise<XMLHttpRequest> {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       const xhr = new XMLHttpRequest();
       xhr.responseType = "json";
       xhr.onreadystatechange = () => {
