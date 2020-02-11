@@ -7,12 +7,12 @@ describe("FileService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it("should be created", () => {
-    const service: FileService = TestBed.get(FileService);
+    const service: FileService = TestBed.inject(FileService);
     expect(service).toBeTruthy();
   });
 
   it("should read and write file contents", async () => {
-    const service: FileService = TestBed.get(FileService);
+    const service: FileService = TestBed.inject(FileService);
     const markdownFile: MarkdownFile = {
       title: "test.md",
       contents: "# test"

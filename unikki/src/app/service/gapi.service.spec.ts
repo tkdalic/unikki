@@ -6,7 +6,7 @@ describe("GapiService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it("should be created", () => {
-    const service: GapiService = TestBed.get(GapiService);
+    const service: GapiService = TestBed.inject(GapiService);
     expect(service).toBeTruthy();
   });
 });
