@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { environment } from "./../..//environments/environment";
+import { reject } from "q";
 
 @Injectable({
   providedIn: "root"
@@ -16,17 +17,22 @@ export class GapiService {
   /**
    * Authorize Google Compute Engine API.
    */
-  auth(): Promise<GoogleApiOAuth2TokenObject> {
-    gapi.client.setApiKey(GapiService.API_KEY);
+  auth(): Promise<Boolean> {
     return new Promise((resolve, reject) => {
-      gapi.auth.authorize(
-        {
-          client_id: GapiService.CLIENT_ID,
-          scope: GapiService.SCOPES,
-          immediate: true
-        },
-        response => resolve(response)
-      );
+      gapi.load("auth2", () => {
+        gapi.auth2
+          .init({
+            client_id: GapiService.CLIENT_ID,
+            scope: GapiService.SCOPES
+          })
+          .then(response => {
+            gapi.auth2
+              .getAuthInstance()
+              .signIn()
+              .then(response => resolve(response.isSignedIn()));
+          })
+          .catch(err => reject(err));
+      });
     });
   }
 
