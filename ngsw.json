@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581383326369,
+  "timestamp": 1581385018185,
   "index": "https://tkdalic.github.io/unikki/index.html",
   "assetGroups": [
     {
@@ -58,7 +58,7 @@
     "https://tkdalic.github.io/unikki/index.html": "432e36e2e1fc436ba4dc2afd2b7bb51eb49a5bfa",
     "https://tkdalic.github.io/unikki/main-es2015.5fe5851d7a635b0ca655.js": "42a1b02eb32ddb8e6f964fed2cb664767f700ec8",
     "https://tkdalic.github.io/unikki/main-es5.5fe5851d7a635b0ca655.js": "1b2d603190624257bfcce27ecd49d5350df2759b",
-    "https://tkdalic.github.io/unikki/manifest.webmanifest": "0b6596b8056fa6dac2b5c6f7289cc0c7e2a65193",
+    "https://tkdalic.github.io/unikki/manifest.webmanifest": "1fcc1a464f7faecf4b37241594d87f528fa74bb9",
     "https://tkdalic.github.io/unikki/polyfills-es2015.b0aa1fb02b6e66e5170c.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "https://tkdalic.github.io/unikki/polyfills-es5.829515bf2b57364e0060.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
     "https://tkdalic.github.io/unikki/runtime-es2015.774ac68827a50db9d33c.js": "30199763ed02273f5cb2680035ce7a4c20267cb5",
