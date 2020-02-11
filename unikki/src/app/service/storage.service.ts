@@ -49,7 +49,7 @@ export class StorageService {
       const data = store.get(key);
       data.onsuccess = () => {
         db.close();
-        resolve(data.result.value);
+        resolve(data.result ? data.result.value : "");
       };
     });
   }

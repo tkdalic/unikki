@@ -54,7 +54,7 @@ export class IndexComponent implements OnInit {
 
   async getUnikkiFile() {
     const authResult = await this.gapiService.auth();
-    if (!authResult || authResult.error) {
+    if (!authResult) {
       window.alert("access was not sucess");
       return;
     }

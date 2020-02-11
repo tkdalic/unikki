@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { environment } from "./../..//environments/environment";
+import { reject } from "q";
 
 @Injectable({
   providedIn: "root"
@@ -16,24 +17,31 @@ export class GapiService {
   /**
    * Authorize Google Compute Engine API.
    */
-  auth(): Promise<GoogleApiOAuth2TokenObject> {
-    gapi.client.setApiKey(GapiService.API_KEY);
-    return new Promise((resolve, reject) => {
-      gapi.auth.authorize(
-        {
-          client_id: GapiService.CLIENT_ID,
-          scope: GapiService.SCOPES,
-          immediate: true
-        },
-        response => resolve(response)
-      );
+  auth(): Promise<boolean> {
+    return new Promise(resolve => {
+      gapi.load("auth2", () => {
+        gapi.auth2
+          .init({
+            client_id: GapiService.CLIENT_ID,
+            scope: GapiService.SCOPES
+          })
+          .then(() => {
+            if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+              return resolve(true);
+            }
+            gapi.auth2
+              .getAuthInstance()
+              .signIn()
+              .then(response => resolve(response.isSignedIn()));
+          });
+      });
     });
   }
 
   listFiles(
     query?: string
   ): Promise<gapi.client.Response<gapi.client.drive.FileList>> {
-    return new Promise((resolve, reject) =>
+    return new Promise(resolve =>
       gapi.client.drive.files
         .list({
           corpora: "user",
@@ -45,7 +53,7 @@ export class GapiService {
   }
 
   getFileContents(fileId: string): Promise<string> {
-    return new Promise((resolve, reject) =>
+    return new Promise(resolve =>
       gapi.client.drive.files
         .get({
           fileId,
@@ -60,7 +68,7 @@ export class GapiService {
     mimeType: string,
     otherOptions: object = {}
   ): Promise<gapi.client.Response<gapi.client.drive.File>> {
-    return new Promise((resolve, reject) =>
+    return new Promise(resolve =>
       gapi.client.drive.files
         .create({
           resource: { name, mimeType, ...otherOptions }
@@ -70,7 +78,7 @@ export class GapiService {
   }
 
   updateFile(fileId: string, media: File): Promise<XMLHttpRequest> {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       const xhr = new XMLHttpRequest();
       xhr.responseType = "json";
       xhr.onreadystatechange = () => {
