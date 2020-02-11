@@ -30,11 +30,16 @@ export class StorageService {
 
   private closeDB() {}
 
-  async set(key: string, value: string): Promise<void> {
-    const db = await this.getDB();
-    const store = this.getStore(db, "readwrite");
-    store.put({ key, value });
-    db.close();
+  set(key: string, value: string): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+      const db = await this.getDB();
+      const store = this.getStore(db, "readwrite");
+      const request = store.put({ key, value });
+      request.onsuccess = () => {
+        db.close();
+        resolve();
+      };
+    });
   }
 
   get(key: string): Promise<string> {
