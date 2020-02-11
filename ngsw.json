@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581382669395,
+  "timestamp": 1581383326369,
   "index": "https://tkdalic.github.io/unikki/index.html",
   "assetGroups": [
     {
@@ -8,8 +8,8 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://tkdalic.github.io/unikki/5-es2015.95050a8dafc15ddb6efc.js",
-        "https://tkdalic.github.io/unikki/5-es5.95050a8dafc15ddb6efc.js",
+        "https://tkdalic.github.io/unikki/5-es2015.7d44594cd72757c02db2.js",
+        "https://tkdalic.github.io/unikki/5-es5.7d44594cd72757c02db2.js",
         "https://tkdalic.github.io/unikki/favicon.ico",
         "https://tkdalic.github.io/unikki/index.html",
         "https://tkdalic.github.io/unikki/main-es2015.5fe5851d7a635b0ca655.js",
@@ -17,8 +17,8 @@
         "https://tkdalic.github.io/unikki/manifest.webmanifest",
         "https://tkdalic.github.io/unikki/polyfills-es2015.b0aa1fb02b6e66e5170c.js",
         "https://tkdalic.github.io/unikki/polyfills-es5.829515bf2b57364e0060.js",
-        "https://tkdalic.github.io/unikki/runtime-es2015.d248ddab325f17bdbef9.js",
-        "https://tkdalic.github.io/unikki/runtime-es5.d248ddab325f17bdbef9.js",
+        "https://tkdalic.github.io/unikki/runtime-es2015.774ac68827a50db9d33c.js",
+        "https://tkdalic.github.io/unikki/runtime-es5.774ac68827a50db9d33c.js",
         "https://tkdalic.github.io/unikki/styles.c25bac898ce79eda9021.css"
       ],
       "patterns": []
@@ -44,8 +44,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://tkdalic.github.io/unikki/5-es2015.95050a8dafc15ddb6efc.js": "a98a43738bae3436277bac854385b2602f6aae0d",
-    "https://tkdalic.github.io/unikki/5-es5.95050a8dafc15ddb6efc.js": "5b3c6cfc4c03c712acb3ff7b8cb4b6927110372e",
+    "https://tkdalic.github.io/unikki/5-es2015.7d44594cd72757c02db2.js": "54fff3e05e8bc5b666431dd13002090a6135ec06",
+    "https://tkdalic.github.io/unikki/5-es5.7d44594cd72757c02db2.js": "02b72195eac5282cbd427c0502ad1111070ab6d2",
     "https://tkdalic.github.io/unikki/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "https://tkdalic.github.io/unikki/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "https://tkdalic.github.io/unikki/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -55,14 +55,14 @@
     "https://tkdalic.github.io/unikki/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://tkdalic.github.io/unikki/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://tkdalic.github.io/unikki/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://tkdalic.github.io/unikki/index.html": "89493355101723e6e5dd2a4a6ebe982a1d50ef61",
+    "https://tkdalic.github.io/unikki/index.html": "432e36e2e1fc436ba4dc2afd2b7bb51eb49a5bfa",
     "https://tkdalic.github.io/unikki/main-es2015.5fe5851d7a635b0ca655.js": "42a1b02eb32ddb8e6f964fed2cb664767f700ec8",
     "https://tkdalic.github.io/unikki/main-es5.5fe5851d7a635b0ca655.js": "1b2d603190624257bfcce27ecd49d5350df2759b",
     "https://tkdalic.github.io/unikki/manifest.webmanifest": "0b6596b8056fa6dac2b5c6f7289cc0c7e2a65193",
     "https://tkdalic.github.io/unikki/polyfills-es2015.b0aa1fb02b6e66e5170c.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "https://tkdalic.github.io/unikki/polyfills-es5.829515bf2b57364e0060.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
-    "https://tkdalic.github.io/unikki/runtime-es2015.d248ddab325f17bdbef9.js": "0303f0265fd7388deca8d566080c4744b2887ba3",
-    "https://tkdalic.github.io/unikki/runtime-es5.d248ddab325f17bdbef9.js": "36efeecbe4af1d90e9343b31a9eda84988010073",
+    "https://tkdalic.github.io/unikki/runtime-es2015.774ac68827a50db9d33c.js": "30199763ed02273f5cb2680035ce7a4c20267cb5",
+    "https://tkdalic.github.io/unikki/runtime-es5.774ac68827a50db9d33c.js": "09c623d3957c20167b239d8c0051c20b19634e11",
     "https://tkdalic.github.io/unikki/styles.c25bac898ce79eda9021.css": "507e5c93c062e926466f25af1ff131b1721971f3",
     "https://tkdalic.github.io/unikki/tui-editor-2x.b4361244b610df3a6c72.png": "21a107dbf180283f6894b76c86e7fb917f44ee77",
     "https://tkdalic.github.io/unikki/tui-editor.30dd0f529e5155cab8a1.png": "2246365c5a4b1c14ce87165c22cd069d1b3ca3cc"
