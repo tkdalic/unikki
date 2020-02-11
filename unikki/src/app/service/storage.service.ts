@@ -24,7 +24,6 @@ export class StorageService {
   }
 
   private getStore(db: IDBDatabase, mode: IDBTransactionMode): IDBObjectStore {
-    console.log(db);
     const transaction = db.transaction([StorageService.TABLE_NAME], mode);
     return transaction.objectStore(StorageService.TABLE_NAME);
   }
