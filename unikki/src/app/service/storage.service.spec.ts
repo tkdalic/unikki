@@ -5,16 +5,16 @@ import { StorageService } from "./storage.service";
 describe("StorageService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it("should be created", () => {
+  it("should be created", async () => {
     const service: StorageService = TestBed.get(StorageService);
-    expect(service).toBeTruthy();
+    expect(await service).toBeTruthy();
   });
 
-  it("should be save and load", () => {
+  it("should be save and load", async () => {
     const service: StorageService = TestBed.get(StorageService);
     const key = "key";
     const value = "value";
-    service.set(key, value);
-    expect(service.get(key)).toBe(value);
+    await service.set(key, value);
+    expect(await service.get(key)).toBe(value);
   });
 });
