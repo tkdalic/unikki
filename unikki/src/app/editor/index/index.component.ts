@@ -73,7 +73,7 @@ export class IndexComponent implements OnInit {
     if (!this.gapiService.selectUnikkiFile) {
       return;
     }
-    this.gapiService.selectUnikkiFile;
+
     const contents = await this.gapiService.getFileContents(
       this.gapiService.selectUnikkiFile.id
     );
