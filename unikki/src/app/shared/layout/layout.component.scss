@@ -17,7 +17,7 @@
 
     &__sidebar {
       flex-basis: 10rem;
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         position: absolute;
         top: 0;
         width: 100%;
@@ -26,13 +26,14 @@
         display: none;
       }
       &--selected {
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           display: block;
         }
       }
     }
 
     &__main {
+      flex-basis: 50rem;
       flex-grow: 1;
     }
   }
