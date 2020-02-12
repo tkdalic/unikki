@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FileItem } from "src/app/resource-model/fileItem";
 
 @Component({
@@ -8,11 +8,16 @@ import { FileItem } from "src/app/resource-model/fileItem";
 })
 export class ListViewComponent implements OnInit {
   @Input() items: Array<FileItem> = [];
+  @Output() clickItem = new EventEmitter<FileItem>();
   constructor() {}
 
   ngOnInit(): void {}
 
   trackItem(index: number, item: FileItem): string {
     return item.id;
+  }
+
+  onClickItem(item: FileItem) {
+    this.clickItem.emit(item);
   }
 }

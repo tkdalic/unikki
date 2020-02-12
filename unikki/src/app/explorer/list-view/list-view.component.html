@@ -1,5 +1,9 @@
 <ul class="list">
-  <li class="list__item" *ngFor="let item of items; trackBy: trackItem">
+  <li
+    class="list__item"
+    *ngFor="let item of items; trackBy: trackItem"
+    (click)="onClickItem(item)"
+  >
     {{ item.name }}
   </li>
 </ul>
