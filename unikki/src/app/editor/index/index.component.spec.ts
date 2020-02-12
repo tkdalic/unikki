@@ -37,10 +37,10 @@ describe("IndexComponent", () => {
       tasks: [{ check: true, text: "test" }],
       markdown: "test"
     };
-    component.diary = Object.assign(testDiary);
+    component.diaryService.diary = Object.assign(testDiary);
     await component.saveDiary();
-    component.diary = null;
+    component.diaryService.diary = null;
     await component.loadDiary();
-    expect(component.diary).toEqual(testDiary);
+    expect(component.diaryService.diary).toEqual(testDiary);
   });
 });
