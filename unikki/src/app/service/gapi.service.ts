@@ -8,9 +8,7 @@ import { reject } from "q";
 export class GapiService {
   constructor() {}
 
-  private static readonly PROJECT_ID = environment.projectId;
   private static readonly CLIENT_ID = environment.clientId;
-  private static readonly API_KEY = environment.apiKey;
   private static readonly SCOPES = environment.scopes;
   private static readonly DIRECTORY_NAME = "unikki_directory";
 
