@@ -2,7 +2,7 @@
   <app-header header></app-header>
   <div main>
     <div class="gapiInfo" *ngIf="isAuth">
-      <h2 class="gapiInfo__title">{{ title }}</h2>
+      <h2 class="gapiInfo__title">{{ gapiService.selectUnikkiFile.name }}</h2>
       <button class="gapiInfo__sync" (click)="updateUnikkiFile()">
         Sync
       </button>

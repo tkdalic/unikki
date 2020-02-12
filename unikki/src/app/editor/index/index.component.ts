@@ -17,8 +17,6 @@ export class IndexComponent implements OnInit {
     markdown: ""
   };
 
-  title = "";
-  fileId = "";
   isAuth = false;
   editorOptions = {
     previewStyle: "tab"
@@ -28,12 +26,10 @@ export class IndexComponent implements OnInit {
   constructor(
     private diaryService: DiaryService,
     private storageService: StorageService,
-    private gapiService: GapiService,
+    public gapiService: GapiService,
     private fileService: FileService,
-    private loadingService: LoadingService,
-    private changeDetectorRef: ChangeDetectorRef
+    private loadingService: LoadingService
   ) {
-    this.title = this.diaryService.makeTitle();
     this.loadingService.show();
     this.loadDiary();
   }
@@ -63,16 +59,29 @@ export class IndexComponent implements OnInit {
     if (directory === null) {
       window.alert("I can't make directory");
     }
-    const unikkiFile = await this.gapiService.getUnikkiFile(
-      directory,
-      this.title
+    this.gapiService.unikkiFiles = await this.gapiService.getUnikkiFiles(
+      directory
     );
+    const title = this.diaryService.makeTitle();
+    const selectFile = this.gapiService.unikkiFiles.find(
+      file => file.name === title
+    );
+    if (selectFile) {
+      this.gapiService.selectUnikkiFile = selectFile;
+    } else {
+      this.gapiService.selectUnikkiFile = await this.gapiService.makeUnikkiFile(
+        directory,
+        title
+      );
+    }
 
-    if (!unikkiFile) {
+    if (!this.gapiService.selectUnikkiFile) {
       return;
     }
-    this.fileId = unikkiFile.id;
-    const contents = await this.gapiService.getFileContents(unikkiFile.id);
+    this.gapiService.selectUnikkiFile;
+    const contents = await this.gapiService.getFileContents(
+      this.gapiService.selectUnikkiFile.id
+    );
     if (!contents) {
       return;
     }
@@ -82,13 +91,13 @@ export class IndexComponent implements OnInit {
 
   async updateUnikkiFile() {
     const markdownFile = {
-      title: this.title,
+      title: this.gapiService.selectUnikkiFile.name,
       contents: this.diaryService.toString(this.diary)
     };
 
     this.loadingService.show();
     const response = await this.gapiService.updateFile(
-      this.fileId,
+      this.gapiService.selectUnikkiFile.id,
       this.fileService.make(markdownFile)
     );
     this.loadingService.hide();

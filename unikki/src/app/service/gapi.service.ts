@@ -12,6 +12,9 @@ export class GapiService {
   private static readonly SCOPES = environment.scopes;
   private static readonly DIRECTORY_NAME = "unikki_directory";
 
+  unikkiFiles: gapi.client.drive.File[] | null = [];
+  selectUnikkiFile: gapi.client.drive.File | null = null;
+
   /**
    * Authorize Google Compute Engine API.
    */
@@ -119,6 +122,7 @@ export class GapiService {
     }
     return null;
   }
+
   async getUnikkiFiles(
     directory: gapi.client.drive.File
   ): Promise<gapi.client.drive.File[] | null> {
@@ -129,16 +133,10 @@ export class GapiService {
     return unikkiFiles.result.files;
   }
 
-  async getUnikkiFile(
+  async makeUnikkiFile(
     directory: gapi.client.drive.File,
     fileName: string
   ): Promise<gapi.client.drive.File | null> {
-    const unikkiFiles = await this.listFiles(
-      `mimeType = 'text/markdown' and trashed = false and '${directory.id}' in parents and name = '${fileName}'`
-    );
-    if (unikkiFiles.result.files.length) {
-      return unikkiFiles.result.files[0];
-    }
     const makeFile = await this.makeFile(fileName, "text/markdown", {
       parents: [directory.id]
     });
