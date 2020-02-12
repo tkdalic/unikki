@@ -2,7 +2,12 @@
   <div class="layout__header">
     <ng-content select="[header]"></ng-content>
   </div>
-  <div class="layout__main">
-    <ng-content select="[main]"></ng-content>
+  <div class="layout__body">
+    <div class="layout__body__sidebar">
+      <ng-content select="[sidebar]"></ng-content>
+    </div>
+    <div class="layout__body__main">
+      <ng-content select="[main]"></ng-content>
+    </div>
   </div>
 </div>
