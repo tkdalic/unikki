@@ -39,14 +39,16 @@ export class GapiService {
   }
 
   listFiles(
-    query?: string
+    query?: string,
+    orderBy: string = ""
   ): Promise<gapi.client.Response<gapi.client.drive.FileList>> {
     return new Promise(resolve =>
       gapi.client.drive.files
         .list({
           corpora: "user",
           fields: "files(kind, id, mimeType, name, webContentLink)",
-          q: query
+          q: query,
+          orderBy
         })
         .execute(response => resolve(response))
     );
@@ -118,6 +120,15 @@ export class GapiService {
       return unikkiDirectories.result;
     }
     return null;
+  }
+  async getUnikkiFiles(
+    directory: gapi.client.drive.File
+  ): Promise<gapi.client.drive.File[] | null> {
+    const unikkiFiles = await this.listFiles(
+      `mimeType = 'text/markdown' and trashed = false and '${directory.id}' in parents`,
+      "name desc"
+    );
+    return unikkiFiles.result.files;
   }
 
   async getUnikkiFile(
