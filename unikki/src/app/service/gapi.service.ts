@@ -8,11 +8,12 @@ import { reject } from "q";
 export class GapiService {
   constructor() {}
 
-  private static readonly PROJECT_ID = environment.projectId;
   private static readonly CLIENT_ID = environment.clientId;
-  private static readonly API_KEY = environment.apiKey;
   private static readonly SCOPES = environment.scopes;
   private static readonly DIRECTORY_NAME = "unikki_directory";
+
+  unikkiFiles: gapi.client.drive.File[] | null = [];
+  selectUnikkiFile: gapi.client.drive.File | null = null;
 
   /**
    * Authorize Google Compute Engine API.
@@ -39,14 +40,16 @@ export class GapiService {
   }
 
   listFiles(
-    query?: string
+    query?: string,
+    orderBy: string = ""
   ): Promise<gapi.client.Response<gapi.client.drive.FileList>> {
     return new Promise(resolve =>
       gapi.client.drive.files
         .list({
           corpora: "user",
           fields: "files(kind, id, mimeType, name, webContentLink)",
-          q: query
+          q: query,
+          orderBy
         })
         .execute(response => resolve(response))
     );
@@ -120,16 +123,20 @@ export class GapiService {
     return null;
   }
 
-  async getUnikkiFile(
+  async getUnikkiFiles(
+    directory: gapi.client.drive.File
+  ): Promise<gapi.client.drive.File[] | null> {
+    const unikkiFiles = await this.listFiles(
+      `mimeType = 'text/markdown' and trashed = false and '${directory.id}' in parents`,
+      "name desc"
+    );
+    return unikkiFiles.result.files;
+  }
+
+  async makeUnikkiFile(
     directory: gapi.client.drive.File,
     fileName: string
   ): Promise<gapi.client.drive.File | null> {
-    const unikkiFiles = await this.listFiles(
-      `mimeType = 'text/markdown' and trashed = false and '${directory.id}' in parents and name = '${fileName}'`
-    );
-    if (unikkiFiles.result.files.length) {
-      return unikkiFiles.result.files[0];
-    }
     const makeFile = await this.makeFile(fileName, "text/markdown", {
       parents: [directory.id]
     });

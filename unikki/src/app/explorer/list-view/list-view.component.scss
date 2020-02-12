@@ -4,9 +4,14 @@
   flex-direction: column;
   &__item {
     font-size: 1rem;
-    width: 100%;
-    padding: 0.5rem 1rem;
     border: solid 1px #ccc;
     background-color: #f8f8f8;
+
+    &__name {
+      padding: 0.5rem 1rem;
+      display: block;
+      text-decoration: none;
+      color: black;
+    }
   }
 }

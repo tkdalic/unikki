@@ -6,6 +6,10 @@ import { Diary } from "../resource-model/diary";
   providedIn: "root"
 })
 export class DiaryService {
+  diary: Diary = {
+    tasks: [],
+    markdown: ""
+  };
   constructor() {}
 
   toString(diary: Diary): string {
