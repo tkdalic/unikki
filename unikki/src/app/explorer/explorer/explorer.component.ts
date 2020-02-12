@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { GapiService } from "src/app/service/gapi.service";
 
 @Component({
   selector: "app-explorer",
@@ -6,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./explorer.component.scss"]
 })
 export class ExplorerComponent implements OnInit {
-  constructor() {}
+  constructor(public gapiService: GapiService) {}
 
   ngOnInit(): void {}
 }
