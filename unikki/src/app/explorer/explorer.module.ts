@@ -3,9 +3,10 @@ import { CommonModule } from "@angular/common";
 
 import { ExplorerRoutingModule } from "./explorer-routing.module";
 import { ListViewComponent } from "./list-view/list-view.component";
+import { ExplorerComponent } from "./explorer/explorer.component";
 
 @NgModule({
-  declarations: [ListViewComponent],
+  declarations: [ListViewComponent, ExplorerComponent],
   imports: [CommonModule, ExplorerRoutingModule]
 })
 export class ExplorerModule {}
