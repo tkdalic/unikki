@@ -7,6 +7,7 @@ import { ExplorerComponent } from "./explorer/explorer.component";
 
 @NgModule({
   declarations: [ListViewComponent, ExplorerComponent],
-  imports: [CommonModule, ExplorerRoutingModule]
+  imports: [CommonModule, ExplorerRoutingModule],
+  exports: [ExplorerComponent]
 })
 export class ExplorerModule {}

@@ -9,6 +9,7 @@ import { TodoComponent } from "./todo/todo.component";
 import { TodoListComponent } from "./todo-list/todo-list.component";
 import { TodoFocusDirective } from "./directive/todo-focus/todo-focus.directive";
 import { SharedModule } from "../shared/shared.module";
+import { ExplorerModule } from "../explorer/explorer.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,12 @@ import { SharedModule } from "../shared/shared.module";
     TodoListComponent,
     TodoFocusDirective
   ],
-  imports: [CommonModule, EditorRoutingModule, FormsModule, SharedModule]
+  imports: [
+    CommonModule,
+    EditorRoutingModule,
+    FormsModule,
+    SharedModule,
+    ExplorerModule
+  ]
 })
 export class EditorModule {}
