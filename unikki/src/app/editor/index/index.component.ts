@@ -12,11 +12,6 @@ import { LoadingService } from "src/app/service/loading.service";
   styleUrls: ["./index.component.scss"]
 })
 export class IndexComponent implements OnInit {
-  diary: Diary = {
-    tasks: [],
-    markdown: ""
-  };
-
   isAuth = false;
   editorOptions = {
     previewStyle: "tab"
@@ -24,7 +19,7 @@ export class IndexComponent implements OnInit {
 
   private readonly storageKey = "unikki";
   constructor(
-    private diaryService: DiaryService,
+    public diaryService: DiaryService,
     private storageService: StorageService,
     public gapiService: GapiService,
     private fileService: FileService,
@@ -44,7 +39,7 @@ export class IndexComponent implements OnInit {
   async saveDiary(): Promise<void> {
     await this.storageService.set(
       this.storageKey,
-      this.diaryService.toString(this.diary)
+      this.diaryService.toString(this.diaryService.diary)
     );
   }
 
@@ -86,13 +81,13 @@ export class IndexComponent implements OnInit {
       return;
     }
 
-    this.diary = this.diaryService.parse(contents);
+    this.diaryService.diary = this.diaryService.parse(contents);
   }
 
   async updateUnikkiFile() {
     const markdownFile = {
       title: this.gapiService.selectUnikkiFile.name,
-      contents: this.diaryService.toString(this.diary)
+      contents: this.diaryService.toString(this.diaryService.diary)
     };
 
     this.loadingService.show();
@@ -110,7 +105,7 @@ export class IndexComponent implements OnInit {
   async loadDiary(): Promise<void> {
     const storageValue = await this.storageService.get(this.storageKey);
     if (storageValue) {
-      this.diary = this.diaryService.parse(storageValue);
+      this.diaryService.diary = this.diaryService.parse(storageValue);
     }
   }
 }

@@ -12,7 +12,7 @@
       <div class="editor__todo">
         <h2 class="editor__title">To-Do</h2>
         <app-todo-list
-          [(tasks)]="diary.tasks"
+          [(tasks)]="diaryService.diary.tasks"
           (tasksChange)="saveDiary()"
         ></app-todo-list>
       </div>
@@ -20,7 +20,7 @@
       <div class="editor__memo">
         <h2 class="editor__title">Memo</h2>
         <app-markdown-editor
-          [(markdown)]="diary.markdown"
+          [(markdown)]="diaryService.diary.markdown"
           (markdownChange)="saveDiary()"
         >
         </app-markdown-editor>
