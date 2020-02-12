@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581468409683,
+  "timestamp": 1581521937718,
   "index": "/unikki/index.html",
   "assetGroups": [
     {
@@ -8,17 +8,17 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/unikki/5-es2015.cf278e3af4f92dfe61d8.js",
-        "/unikki/5-es5.cf278e3af4f92dfe61d8.js",
+        "/unikki/5-es2015.c5f4d3d0779608b82726.js",
+        "/unikki/5-es5.c5f4d3d0779608b82726.js",
         "/unikki/favicon.ico",
         "/unikki/index.html",
-        "/unikki/main-es2015.5fe5851d7a635b0ca655.js",
-        "/unikki/main-es5.5fe5851d7a635b0ca655.js",
+        "/unikki/main-es2015.72af2335225eac1a596f.js",
+        "/unikki/main-es5.72af2335225eac1a596f.js",
         "/unikki/manifest.webmanifest",
         "/unikki/polyfills-es2015.b0aa1fb02b6e66e5170c.js",
         "/unikki/polyfills-es5.829515bf2b57364e0060.js",
-        "/unikki/runtime-es2015.a50a25582e682bfa6658.js",
-        "/unikki/runtime-es5.a50a25582e682bfa6658.js",
+        "/unikki/runtime-es2015.befc3a6bd3c59b68826a.js",
+        "/unikki/runtime-es5.befc3a6bd3c59b68826a.js",
         "/unikki/styles.c25bac898ce79eda9021.css"
       ],
       "patterns": []
@@ -44,8 +44,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/unikki/5-es2015.cf278e3af4f92dfe61d8.js": "69fb300d4f8882aabfadcff9c78eb314405df367",
-    "/unikki/5-es5.cf278e3af4f92dfe61d8.js": "58b96c7591b5a1c7ba86454fadd32d3f1a66c064",
+    "/unikki/5-es2015.c5f4d3d0779608b82726.js": "83894539cc5b123fa583c43b50401cefa052e7e9",
+    "/unikki/5-es5.c5f4d3d0779608b82726.js": "50217f58d6209cfa031d0f49569ac997d3a8c7e8",
     "/unikki/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/unikki/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/unikki/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -55,14 +55,14 @@
     "/unikki/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/unikki/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/unikki/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/unikki/index.html": "42ac4906b409042858d35c2bcc3904d9f6653ffb",
-    "/unikki/main-es2015.5fe5851d7a635b0ca655.js": "42a1b02eb32ddb8e6f964fed2cb664767f700ec8",
-    "/unikki/main-es5.5fe5851d7a635b0ca655.js": "1b2d603190624257bfcce27ecd49d5350df2759b",
+    "/unikki/index.html": "7ddbcf47b7d8ccb51669f022650390b3ead4c6e6",
+    "/unikki/main-es2015.72af2335225eac1a596f.js": "d11a567c0fabda3bd6386733ed45de00c02a956b",
+    "/unikki/main-es5.72af2335225eac1a596f.js": "3ea4e14e4303dadce84bcdbf27fd9cce228b371a",
     "/unikki/manifest.webmanifest": "b9a0e17977f98380e1e0eeb24f040931b1038fae",
     "/unikki/polyfills-es2015.b0aa1fb02b6e66e5170c.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "/unikki/polyfills-es5.829515bf2b57364e0060.js": "d5158605c08abe16a3992ccf4604bf8d2a934964",
-    "/unikki/runtime-es2015.a50a25582e682bfa6658.js": "ee0c1a9b93941b2a2f35950edefa15835cf21728",
-    "/unikki/runtime-es5.a50a25582e682bfa6658.js": "678cb462b546bbc979048cc5fadef0022905e373",
+    "/unikki/runtime-es2015.befc3a6bd3c59b68826a.js": "24c646b92c17cc26837ae9ab49a35a911a7d16b8",
+    "/unikki/runtime-es5.befc3a6bd3c59b68826a.js": "eeb98e6cdd6815de89751d780204e26dd5516947",
     "/unikki/styles.c25bac898ce79eda9021.css": "507e5c93c062e926466f25af1ff131b1721971f3",
     "/unikki/tui-editor-2x.b4361244b610df3a6c72.png": "21a107dbf180283f6894b76c86e7fb917f44ee77",
     "/unikki/tui-editor.30dd0f529e5155cab8a1.png": "2246365c5a4b1c14ce87165c22cd069d1b3ca3cc"
