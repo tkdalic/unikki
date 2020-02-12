@@ -1,1 +1,5 @@
-<p>list-view works!</p>
+<ul class="list">
+  <li class="list__item" *ngFor="let item of items; trackBy: trackItem">
+    {{ item.name }}
+  </li>
+</ul>
