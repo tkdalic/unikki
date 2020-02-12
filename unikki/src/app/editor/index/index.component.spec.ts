@@ -6,6 +6,7 @@ import { TodoListComponent } from "../todo-list/todo-list.component";
 import { TodoComponent } from "../todo/todo.component";
 import { FormsModule } from "@angular/forms";
 import { SharedModule } from "src/app/shared/shared.module";
+import { ExplorerModule } from "src/app/explorer/explorer.module";
 
 describe("IndexComponent", () => {
   let component: IndexComponent;
@@ -19,7 +20,7 @@ describe("IndexComponent", () => {
         TodoListComponent,
         TodoComponent
       ],
-      imports: [FormsModule, SharedModule]
+      imports: [FormsModule, SharedModule, ExplorerModule]
     }).compileComponents();
     fixture = TestBed.createComponent(IndexComponent);
     component = fixture.componentInstance;
