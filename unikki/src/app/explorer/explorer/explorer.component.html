@@ -1,3 +1,6 @@
 <div class="explorer">
-  <app-list-view [items]="gapiService.unikkiFiles"></app-list-view>
+  <app-list-view
+    [items]="gapiService.unikkiFiles"
+    (clickItem)="changeDiary($event)"
+  ></app-list-view>
 </div>
