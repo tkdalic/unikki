@@ -7,13 +7,7 @@ import { FileItem } from "src/app/resource-model/fileItem";
   styleUrls: ["./list-view.component.scss"]
 })
 export class ListViewComponent implements OnInit {
-  @Input() items: Array<FileItem> = [
-    { name: "name", id: "id" },
-    { name: "name", id: "id" },
-    { name: "name", id: "id" },
-    { name: "name", id: "id" },
-    { name: "name", id: "id" }
-  ];
+  @Input() items: Array<FileItem> = [];
   constructor() {}
 
   ngOnInit(): void {}
