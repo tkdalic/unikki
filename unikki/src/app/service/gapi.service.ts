@@ -118,7 +118,7 @@ export class GapiService {
       "application/vnd.google-apps.folder"
     );
     if (unikkiDirectoryResponse.result.id) {
-      return unikkiDirectories.result;
+      return unikkiDirectoryResponse.result;
     }
     return null;
   }
