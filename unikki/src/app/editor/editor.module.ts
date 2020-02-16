@@ -10,6 +10,7 @@ import { TodoListComponent } from "./todo-list/todo-list.component";
 import { TodoFocusDirective } from "./directive/todo-focus/todo-focus.directive";
 import { SharedModule } from "../shared/shared.module";
 import { ExplorerModule } from "../explorer/explorer.module";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ExplorerModule } from "../explorer/explorer.module";
     EditorRoutingModule,
     FormsModule,
     SharedModule,
-    ExplorerModule
+    ExplorerModule,
+    MatCheckboxModule
   ]
 })
 export class EditorModule {}

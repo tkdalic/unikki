@@ -4,13 +4,16 @@ import { NgModule } from "@angular/core";
 import { moduleMetadata } from "@storybook/angular";
 import { TodoComponent } from "src/app/editor/todo/todo.component";
 import { TodoFocusDirective } from "src/app/editor/directive/todo-focus/todo-focus.directive";
+import { MatInputModule } from "@angular/material/input";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 export default {
   title: "todo-list",
   decorators: [
     withKnobs,
     moduleMetadata({
-      declarations: [TodoComponent, TodoFocusDirective]
+      declarations: [TodoComponent, TodoFocusDirective],
+      imports: [MatInputModule, MatCheckboxModule]
     })
   ]
 };
