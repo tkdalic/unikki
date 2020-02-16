@@ -3,8 +3,11 @@
 .todo {
   display: flex;
   align-items: center;
+  margin: 2px 0;
 
   &__text {
+    height: 16px;
+    line-height: 16px;
     flex-grow: 1;
     border: none;
     outline: none;
