@@ -4,10 +4,11 @@ import { LayoutComponent } from "./layout/layout.component";
 import { HeaderComponent } from "./header/header.component";
 import { LoadingComponent } from "./loading/loading.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSidenavModule } from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, LoadingComponent],
   exports: [HeaderComponent, LayoutComponent, LoadingComponent],
-  imports: [CommonModule, MatProgressSpinnerModule]
+  imports: [CommonModule, MatProgressSpinnerModule, MatSidenavModule]
 })
 export class SharedModule {}
