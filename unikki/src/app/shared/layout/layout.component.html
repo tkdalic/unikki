@@ -5,7 +5,7 @@
   <mat-sidenav-container class="layout__body">
     <mat-sidenav
       [mode]="sidebarMode"
-      [opened]="sidebarService.isDisplay"
+      [(opened)]="sidebarService.isDisplay"
       class="layout__body__sidebar"
     >
       <ng-content select="[sidebar]"></ng-content>
