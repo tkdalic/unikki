@@ -2,7 +2,7 @@
 
 .layout {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   &__header {
     position: fixed;
@@ -13,11 +13,15 @@
   }
 
   &__body {
-    padding-top: 3rem;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     position: relative;
+
+    &__sidebar,
+    &__main {
+      padding-top: 3rem;
+    }
 
     &__sidebar {
       flex-basis: 10rem;
