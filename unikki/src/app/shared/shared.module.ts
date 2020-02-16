@@ -7,6 +7,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, LoadingComponent],
@@ -16,7 +17,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class SharedModule {}
