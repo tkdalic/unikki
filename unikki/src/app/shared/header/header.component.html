@@ -1,7 +1,9 @@
 <mat-toolbar class="header">
-  <mat-icon class="header__hamburger" (click)="sidebarService.toggle()">
-    menu
-  </mat-icon>
+  <button mat-icon-button class="header__hamburger">
+    <mat-icon (click)="sidebarService.toggle()">
+      menu
+    </mat-icon>
+  </button>
   <span class="header__title">
     {{ title }}
   </span>
