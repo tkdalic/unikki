@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { LayoutComponent } from "./layout.component";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 describe("LayoutComponent", () => {
   let component: LayoutComponent;
@@ -8,7 +10,8 @@ describe("LayoutComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LayoutComponent]
+      declarations: [LayoutComponent],
+      imports: [MatSidenavModule, BrowserAnimationsModule]
     }).compileComponents();
   }));
 

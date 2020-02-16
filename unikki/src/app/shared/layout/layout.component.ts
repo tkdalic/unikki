@@ -8,7 +8,9 @@ import { SidebarService } from "src/app/service/sidebar.service";
 })
 export class LayoutComponent implements OnInit {
   sidebarMode = "";
-  constructor(public sidebarService: SidebarService) {}
+  constructor(public sidebarService: SidebarService) {
+    this.onResize();
+  }
 
   ngOnInit() {}
 
