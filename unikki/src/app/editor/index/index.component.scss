@@ -1,3 +1,5 @@
+@import "../../../styles/theme";
+
 .gapiInfo {
   display: flex;
   padding: 0.2rem 0.5rem;
@@ -6,7 +8,7 @@
 
   &__sync {
     height: 2.5rem;
-    border: solid 1px #ccc;
+    border: solid 1px $primary-color;
     border-radius: 1.5rem;
     padding: 0 0.5rem;
 

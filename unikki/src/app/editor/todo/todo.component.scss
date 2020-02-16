@@ -1,3 +1,5 @@
+@import "../../../styles/theme";
+
 .todo {
   display: flex;
   align-items: center;
@@ -7,10 +9,10 @@
     border: none;
     outline: none;
     margin: 0 0.3rem;
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px $primary-color;
 
     &:focus {
-      border-bottom: solid 1px #c50;
+      border-bottom: solid 1px $accent-color;
       transition: 0.2s;
     }
   }
