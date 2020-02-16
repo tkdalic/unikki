@@ -9,22 +9,26 @@
       </button>
     </div>
     <div class="editor">
-      <div class="editor__todo">
-        <h2 class="editor__title">To-Do</h2>
-        <app-todo-list
-          [(tasks)]="diaryService.diary.tasks"
-          (tasksChange)="saveDiary()"
-        ></app-todo-list>
-      </div>
+      <mat-card class="editor__todo">
+        <mat-card-title class="editor__todo__title">To-Do</mat-card-title>
+        <mat-card-content class="editor__todo__content">
+          <app-todo-list
+            [(tasks)]="diaryService.diary.tasks"
+            (tasksChange)="saveDiary()"
+          ></app-todo-list>
+        </mat-card-content>
+      </mat-card>
 
-      <div class="editor__memo">
-        <h2 class="editor__title">Memo</h2>
-        <app-markdown-editor
-          [(markdown)]="diaryService.diary.markdown"
-          (markdownChange)="saveDiary()"
-        >
-        </app-markdown-editor>
-      </div>
+      <mat-card class="editor__memo">
+        <mat-card-title class="editor__memo__title">Memo</mat-card-title>
+        <mat-card-content class="editor__memo__content">
+          <app-markdown-editor
+            [(markdown)]="diaryService.diary.markdown"
+            (markdownChange)="saveDiary()"
+          >
+          </app-markdown-editor>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </app-layout>
