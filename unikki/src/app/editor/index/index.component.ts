@@ -13,6 +13,7 @@ import { LoadingService } from "src/app/service/loading.service";
 })
 export class IndexComponent implements OnInit {
   isAuth = false;
+  isSyncing = false;
   editorOptions = {
     previewStyle: "tab"
   };
@@ -85,6 +86,7 @@ export class IndexComponent implements OnInit {
   }
 
   async updateUnikkiFile() {
+    this.isSyncing = true;
     const markdownFile = {
       title: this.gapiService.selectUnikkiFile.name,
       contents: this.diaryService.toString(this.diaryService.diary)
@@ -99,6 +101,7 @@ export class IndexComponent implements OnInit {
 
     if (response) {
       window.alert("success!");
+      this.isSyncing = false;
     }
   }
 

@@ -11,6 +11,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatIconModule } from "@angular/material/icon";
 
 describe("IndexComponent", () => {
   let component: IndexComponent;
@@ -31,7 +32,8 @@ describe("IndexComponent", () => {
         MatCheckboxModule,
         MatCardModule,
         MatButtonModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatIconModule
       ]
     }).compileComponents();
     fixture = TestBed.createComponent(IndexComponent);

@@ -3,8 +3,11 @@
   <app-explorer sidebar></app-explorer>
   <div main>
     <button mat-fab class="gapiInfo__sync" (click)="updateUnikkiFile()">
-      Sync
+      <mat-icon [ngClass]="{ 'gapiInfo__sync--rotate': isSyncing }"
+        >sync</mat-icon
+      >
     </button>
+
     <div class="editor">
       <mat-card class="editor__todo">
         <mat-card-title class="editor__todo__title">To-Do</mat-card-title>
