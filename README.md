@@ -2,6 +2,8 @@
 
 unikki は、書き留めることに特化した日記です。
 
+![editor画面](docs/pictures/screenshot_editor.png)
+
 ## Feature
 
 以下の特徴があります。
