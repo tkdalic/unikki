@@ -1,0 +1,21 @@
+@import "~@angular/material/theming";
+
+$app-primary: mat-palette($mat-gray);
+$app-accent: mat-palette($mat-deep-orange);
+$app-warn: mat-palette($mat-pink);
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+$primary-color: mat-color($app-primary, 400);
+$primary-light-color: mat-color($app-primary, 200);
+
+$accent-color: mat-color($app-accent);
+
+$overlay-color: #0005;
+$shadow-color: #0005;
+
+// 影の高さをつける。
+// $overlap: 影の高さ
+@mixin box-shadow($overlap: 1) {
+  box-shadow: 0 $overlap * 2px $overlap * 5px 0 $shadow-color;
+}

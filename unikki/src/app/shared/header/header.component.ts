@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { SidebarService } from "src/app/service/sidebar.service";
 
 @Component({
@@ -7,6 +7,7 @@ import { SidebarService } from "src/app/service/sidebar.service";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
+  @Input() title = "";
   constructor(public sidebarService: SidebarService) {}
 
   ngOnInit() {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { SidebarService } from "src/app/service/sidebar.service";
 
 @Component({
@@ -7,7 +7,15 @@ import { SidebarService } from "src/app/service/sidebar.service";
   styleUrls: ["./layout.component.scss"]
 })
 export class LayoutComponent implements OnInit {
-  constructor(public sidebarService: SidebarService) {}
+  sidebarMode = "";
+  constructor(public sidebarService: SidebarService) {
+    this.onResize();
+  }
 
   ngOnInit() {}
+
+  @HostListener("window:resize")
+  onResize() {
+    this.sidebarMode = window.innerWidth > 700 ? "side" : "over";
+  }
 }

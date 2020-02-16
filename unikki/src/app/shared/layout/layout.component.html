@@ -2,17 +2,16 @@
   <div class="layout__header">
     <ng-content select="[header]"></ng-content>
   </div>
-  <div class="layout__body">
-    <div
+  <mat-sidenav-container class="layout__body">
+    <mat-sidenav
+      [mode]="sidebarMode"
+      [(opened)]="sidebarService.isDisplay"
       class="layout__body__sidebar"
-      [ngClass]="{
-        'layout__body__sidebar--selected': sidebarService.isDisplay
-      }"
     >
       <ng-content select="[sidebar]"></ng-content>
-    </div>
-    <div class="layout__body__main">
+    </mat-sidenav>
+    <mat-sidenav-content class="layout__body__main">
       <ng-content select="[main]"></ng-content>
-    </div>
-  </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

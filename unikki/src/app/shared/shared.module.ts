@@ -3,10 +3,20 @@ import { CommonModule } from "@angular/common";
 import { LayoutComponent } from "./layout/layout.component";
 import { HeaderComponent } from "./header/header.component";
 import { LoadingComponent } from "./loading/loading.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, LoadingComponent],
   exports: [HeaderComponent, LayoutComponent, LoadingComponent],
-  imports: [CommonModule]
+  imports: [
+    CommonModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule
+  ]
 })
 export class SharedModule {}

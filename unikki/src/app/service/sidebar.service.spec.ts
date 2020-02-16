@@ -14,6 +14,13 @@ describe("SidebarService", () => {
     expect(service).toBeTruthy();
   });
 
+  it("should set", () => {
+    service.isDisplay = true;
+    expect(service.isDisplay).toBeTruthy();
+    service.isDisplay = false;
+    expect(service.isDisplay).toBeFalsy();
+  });
+
   it("should show", () => {
     service.show();
     expect(service.isDisplay).toBeTruthy();

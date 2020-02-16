@@ -7,6 +7,11 @@ import { TodoComponent } from "../todo/todo.component";
 import { FormsModule } from "@angular/forms";
 import { SharedModule } from "src/app/shared/shared.module";
 import { ExplorerModule } from "src/app/explorer/explorer.module";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatIconModule } from "@angular/material/icon";
 
 describe("IndexComponent", () => {
   let component: IndexComponent;
@@ -20,7 +25,16 @@ describe("IndexComponent", () => {
         TodoListComponent,
         TodoComponent
       ],
-      imports: [FormsModule, SharedModule, ExplorerModule]
+      imports: [
+        FormsModule,
+        SharedModule,
+        ExplorerModule,
+        MatCheckboxModule,
+        MatCardModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        MatIconModule
+      ]
     }).compileComponents();
     fixture = TestBed.createComponent(IndexComponent);
     component = fixture.componentInstance;

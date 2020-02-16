@@ -8,6 +8,7 @@ import { FileItem } from "src/app/resource-model/fileItem";
 })
 export class ListViewComponent implements OnInit {
   @Input() items: Array<FileItem> = [];
+  @Input() selectId = "";
   @Output() clickItem = new EventEmitter<FileItem>();
   constructor() {}
 

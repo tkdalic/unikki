@@ -1,30 +1,34 @@
 <app-layout>
-  <app-header header></app-header>
+  <app-header header [title]="gapiService.selectUnikkiFile?.name"></app-header>
   <app-explorer sidebar></app-explorer>
   <div main>
-    <div class="gapiInfo" *ngIf="isAuth">
-      <h2 class="gapiInfo__title">{{ gapiService.selectUnikkiFile.name }}</h2>
-      <button class="gapiInfo__sync" (click)="updateUnikkiFile()">
-        Sync
-      </button>
-    </div>
-    <div class="editor">
-      <div class="editor__todo">
-        <h2 class="editor__title">To-Do</h2>
-        <app-todo-list
-          [(tasks)]="diaryService.diary.tasks"
-          (tasksChange)="saveDiary()"
-        ></app-todo-list>
-      </div>
+    <button mat-fab class="gapiInfo__sync" (click)="updateUnikkiFile()">
+      <mat-icon [ngClass]="{ 'gapiInfo__sync--rotate': isSyncing }"
+        >sync</mat-icon
+      >
+    </button>
 
-      <div class="editor__memo">
-        <h2 class="editor__title">Memo</h2>
-        <app-markdown-editor
-          [(markdown)]="diaryService.diary.markdown"
-          (markdownChange)="saveDiary()"
-        >
-        </app-markdown-editor>
-      </div>
+    <div class="editor">
+      <mat-card class="editor__todo">
+        <mat-card-title class="editor__todo__title">To-Do</mat-card-title>
+        <mat-card-content class="editor__todo__content">
+          <app-todo-list
+            [(tasks)]="diaryService.diary.tasks"
+            (tasksChange)="saveDiary()"
+          ></app-todo-list>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="editor__memo">
+        <mat-card-title class="editor__memo__title">Memo</mat-card-title>
+        <mat-card-content class="editor__memo__content">
+          <app-markdown-editor
+            [(markdown)]="diaryService.diary.markdown"
+            (markdownChange)="saveDiary()"
+          >
+          </app-markdown-editor>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </app-layout>

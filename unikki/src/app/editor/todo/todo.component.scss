@@ -1,6 +1,22 @@
+@import "../../../styles/theme";
+
 .todo {
   display: flex;
+  align-items: center;
+  margin: 2px 0;
+
   &__text {
+    height: 16px;
+    line-height: 16px;
     flex-grow: 1;
+    border: none;
+    outline: none;
+    margin: 0 0.3rem;
+    border-bottom: solid 1px $primary-color;
+
+    &:focus {
+      border-bottom: solid 1px $accent-color;
+      transition: 0.2s;
+    }
   }
 }

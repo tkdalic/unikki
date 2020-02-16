@@ -1,3 +1,5 @@
+@import "../../../styles/theme";
+
 .gapiInfo {
   display: flex;
   padding: 0.2rem 0.5rem;
@@ -5,13 +7,22 @@
   flex-wrap: wrap;
 
   &__sync {
-    height: 2.5rem;
-    border: solid 1px #ccc;
-    border-radius: 1.5rem;
-    padding: 0 0.5rem;
+    position: fixed;
+    z-index: 100;
+    right: 1rem;
+    bottom: 1rem;
 
-    &:focus {
-      outline: none;
+    &--rotate {
+      animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
     }
   }
 }
@@ -22,13 +33,13 @@
   margin: 0.5rem;
 
   &__todo {
-    margin: 0;
+    margin: 5px;
     flex-basis: 400px;
     flex-grow: 4;
   }
 
   &__memo {
-    margin: 0;
+    margin: 5px;
     flex-basis: 600px;
     flex-grow: 6;
   }

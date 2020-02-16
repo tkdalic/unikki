@@ -1,9 +1,17 @@
 import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import { LayoutComponent } from "src/app/shared/layout/layout.component";
+import { moduleMetadata } from "@storybook/angular";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 export default {
   title: "layout",
-  decorators: [withKnobs]
+  decorators: [
+    withKnobs,
+    moduleMetadata({
+      imports: [MatSidenavModule, BrowserAnimationsModule]
+    })
+  ]
 };
 
 export const layout = () => ({

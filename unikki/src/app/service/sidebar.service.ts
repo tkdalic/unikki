@@ -10,6 +10,11 @@ export class SidebarService {
   get isDisplay(): boolean {
     return this.isDisplayFlg;
   }
+
+  set isDisplay(value: boolean) {
+    this.isDisplayFlg = value;
+  }
+
   show() {
     this.isDisplayFlg = true;
   }
