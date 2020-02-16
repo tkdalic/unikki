@@ -10,8 +10,6 @@
   @include box-shadow();
 
   &__hamburger {
-    height: 2rem;
-    border: solid 1px $primary-color;
-    width: 2rem;
+    margin-right: 0.5rem;
   }
 }

@@ -6,6 +6,7 @@ import { LoadingComponent } from "./loading/loading.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, LoadingComponent],
@@ -14,7 +15,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     CommonModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
   ]
 })
 export class SharedModule {}

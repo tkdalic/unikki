@@ -4,6 +4,7 @@ import { LayoutComponent } from "./layout.component";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
 
 describe("LayoutComponent", () => {
   let component: LayoutComponent;
@@ -12,7 +13,12 @@ describe("LayoutComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [LayoutComponent],
-      imports: [MatSidenavModule, BrowserAnimationsModule, MatToolbarModule]
+      imports: [
+        MatSidenavModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule
+      ]
     }).compileComponents();
   }));
 
