@@ -1,5 +1,5 @@
 <app-layout>
-  <app-header header [title]="gapiService.selectUnikkiFile.name"></app-header>
+  <app-header header [title]="gapiService.selectUnikkiFile?.name"></app-header>
   <app-explorer sidebar></app-explorer>
   <div main>
     <button mat-fab class="gapiInfo__sync" (click)="updateUnikkiFile()">
