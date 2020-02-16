@@ -7,14 +7,10 @@
   flex-wrap: wrap;
 
   &__sync {
-    height: 2.5rem;
-    border: solid 1px $primary-color;
-    border-radius: 1.5rem;
-    padding: 0 0.5rem;
-
-    &:focus {
-      outline: none;
-    }
+    position: fixed;
+    z-index: 100;
+    right: 1rem;
+    bottom: 1rem;
   }
 }
 

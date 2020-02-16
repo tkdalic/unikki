@@ -2,12 +2,9 @@
   <app-header header [title]="gapiService.selectUnikkiFile.name"></app-header>
   <app-explorer sidebar></app-explorer>
   <div main>
-    <div class="gapiInfo" *ngIf="isAuth">
-      <h2 class="gapiInfo__title">{{ gapiService.selectUnikkiFile.name }}</h2>
-      <button class="gapiInfo__sync" (click)="updateUnikkiFile()">
-        Sync
-      </button>
-    </div>
+    <button mat-fab class="gapiInfo__sync" (click)="updateUnikkiFile()">
+      Sync
+    </button>
     <div class="editor">
       <mat-card class="editor__todo">
         <mat-card-title class="editor__todo__title">To-Do</mat-card-title>

@@ -12,6 +12,7 @@ import { SharedModule } from "../shared/shared.module";
 import { ExplorerModule } from "../explorer/explorer.module";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatCardModule } from "@angular/material/card";
     SharedModule,
     ExplorerModule,
     MatCheckboxModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class EditorModule {}
