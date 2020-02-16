@@ -1,11 +1,9 @@
-<ul class="list">
-  <li class="list__item" *ngFor="let item of items; trackBy: trackItem">
-    <a
-      href="javascript:void(0);"
-      class="list__item__name"
-      (click)="onClickItem(item)"
-    >
-      {{ item.name }}
-    </a>
-  </li>
-</ul>
+<mat-nav-list class="list">
+  <mat-list-item
+    class="list__item"
+    *ngFor="let item of items; trackBy: trackItem"
+    (click)="onClickItem(item)"
+  >
+    {{ item.name }}
+  </mat-list-item>
+</mat-nav-list>
