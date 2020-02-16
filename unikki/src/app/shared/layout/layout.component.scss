@@ -1,3 +1,5 @@
+@import "../../../styles/theme";
+
 .layout {
   width: 100%;
 
@@ -17,6 +19,7 @@
 
     &__sidebar {
       flex-basis: 10rem;
+      @include box-shadow();
     }
 
     &__main {

@@ -12,3 +12,10 @@ $primary-light-color: mat-color($app-primary, 200);
 $accent-color: mat-color($app-accent);
 
 $overlay-color: #0005;
+$shadow-color: #0005;
+
+// 影の高さをつける。
+// $overlap: 影の高さ
+@mixin box-shadow($overlap: 1) {
+  box-shadow: 0 $overlap * 2px $overlap * 5px 0 $shadow-color;
+}

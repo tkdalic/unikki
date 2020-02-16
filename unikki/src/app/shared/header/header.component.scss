@@ -7,6 +7,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  @include box-shadow();
 
   &__hamburger {
     height: 2rem;
