@@ -1,6 +1,8 @@
-<header class="header">
+<mat-toolbar class="header">
   <button class="header__hamburger" (click)="sidebarService.toggle()">
     三
   </button>
-  <h1 class="header__title">{{ title }}</h1>
-</header>
+  <span class="header__title">
+    {{ title }}
+  </span>
+</mat-toolbar>
