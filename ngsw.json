@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1582988945233,
+  "timestamp": 1582989939725,
   "index": "/unikki/index.html",
   "assetGroups": [
     {
@@ -46,15 +46,15 @@
   "hashTable": {
     "/unikki/5-es2015.3f3257a5a4a9c97d5be0.js": "3d43ca7627327dd685e9f7024b6377c5a83f99e0",
     "/unikki/5-es5.3f3257a5a4a9c97d5be0.js": "1afe1b46c042dc0d77089b72cdeb215f1b1156e4",
-    "/unikki/assets/icons/icon-128x128.png": "67335c8a6bb93a0c00fc87fd911cebc2f89bc9c7",
-    "/unikki/assets/icons/icon-144x144.png": "b926180856708829257b84a544319521d644a028",
-    "/unikki/assets/icons/icon-152x152.png": "da9a310ec0c34fdcfdfde59f8c14db18dd9f486a",
-    "/unikki/assets/icons/icon-192x192.png": "33bab39e09de2357d728c3868c553b3503ad82bf",
-    "/unikki/assets/icons/icon-384x384.png": "aa9525e56c1a330c3cad0afebdc4214f1c844401",
-    "/unikki/assets/icons/icon-512x512.png": "0f3c1226c085a67391966ea426805286110bfa6c",
-    "/unikki/assets/icons/icon-72x72.png": "d04529882874bd8465c43622fc7745f91c6cb465",
-    "/unikki/assets/icons/icon-96x96.png": "4fb86f7855a9fc2016baaf1e73aea8c518b231d6",
-    "/unikki/favicon.ico": "674c0d45fbe452ccf9cf22fe43604e1c469f6fa9",
+    "/unikki/assets/icons/icon-128x128.png": "36c996d59fa1c2e493c311584982b2e876c19a42",
+    "/unikki/assets/icons/icon-144x144.png": "10240eaa08b6144c2b6b5426ae4edc8fd0b3d44b",
+    "/unikki/assets/icons/icon-152x152.png": "34175cb77eb04b34675a50ef408b89ad0aa46d18",
+    "/unikki/assets/icons/icon-192x192.png": "a4362b76fbab1acb4bbca6fba5902375e5ee2504",
+    "/unikki/assets/icons/icon-384x384.png": "156428c93599bdc3679d45421e287d58a80ee464",
+    "/unikki/assets/icons/icon-512x512.png": "12a4f6dd4905f0852e32d811aa6df604b9eb57e7",
+    "/unikki/assets/icons/icon-72x72.png": "4470a5b209f88e548de680ed6b97506ee6e794cf",
+    "/unikki/assets/icons/icon-96x96.png": "08295b4c2cd05074ad14ddc02be697685ba2fe05",
+    "/unikki/favicon.ico": "858652c12c7a32f714f869504d58f5767f8a2507",
     "/unikki/index.html": "75be3c35e981cd4bf2c542387be2dda405b7e3da",
     "/unikki/main-es2015.fcfa89bd2efbd00c754b.js": "f4163b854a6bfdcef142a1b476cfc268760f5dea",
     "/unikki/main-es5.fcfa89bd2efbd00c754b.js": "6feb0fee031f3bac09dfcdde5b1bfeb62469de30",
