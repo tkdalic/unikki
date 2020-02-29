@@ -1,9 +1,9 @@
 <app-layout>
   <app-header header [title]="gapiService.selectUnikkiFile?.name"></app-header>
   <app-explorer sidebar></app-explorer>
-  <div main>
-    <button mat-fab class="gapiInfo__sync" (click)="updateUnikkiFile()">
-      <mat-icon [ngClass]="{ 'gapiInfo__sync--rotate': isSyncing }"
+  <div class="gapi-info" main>
+    <button mat-fab class="gapi-info__sync" (click)="updateUnikkiFile()">
+      <mat-icon [ngClass]="{ 'gapi-info__sync--rotate': isSyncing }"
         >sync</mat-icon
       >
     </button>
